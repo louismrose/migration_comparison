@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<lit_petriNets:Net xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:lit_petriNets="lit_petriNets">
-  <places name="Start" dst="//@transitions.0"/>
-  <places name="Mid 1" src="//@transitions.0" dst="//@transitions.1"/>
-  <places name="Mid 2" src="//@transitions.0" dst="//@transitions.1"/>
-  <places name="End" src="//@transitions.1"/>
-  <transitions src="//@places.0" dst="//@places.1 //@places.2" name="Split"/>
-  <transitions src="//@places.1 //@places.2" dst="//@places.3" name="Join"/>
-</lit_petriNets:Net>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<ParameterList xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="ParameterMM">
-  <parameters xsi:type="StringParameter" name="MSR" value="NSS-Ggoogle"/>
-  <parameters xsi:type="StringParameter" name="resultPath" value="resultStrF.txt"/>  
-  <parameters xsi:type="StringParameter" name="rightDistractor" value="u r i"/>
-  <parameters xsi:type="StringParameter" name="rightDistractor" value="p n m l"/>
-  <parameters xsi:type="StringParameter" name="leftTokenizer" value="UpperCaseTokenizer"/>
-  <parameters xsi:type="StringParameter" name="rightTokenizer" value="UpperCaseTokenizer"/>
-</ParameterList>
