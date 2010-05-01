@@ -1,0 +1,18 @@
+--@atlcompiler atl2006
+library ProperTerm;
+
+helper def: distractorList : Sequence(String) = ParameterMM!Parameter.allInstances()->select(e | e.name = 'distractor')->collect(e | e.value);
+helper def: leftDistractorList : Sequence(String) = ParameterMM!Parameter.allInstances()->select(e | e.name = 'leftDistractor')->collect(e | e.value);
+helper def: rightDistractorList : Sequence(String) = ParameterMM!Parameter.allInstances()->select(e | e.name = 'rightDistractor')->collect(e | e.value);
+	
+helper context String def : rightProperTerm : String =
+	self.properTerm(thisModule.rightDistractorList);
+
+helper context String def : leftProperTerm : String =
+	self.properTerm(thisModule.leftDistractorList);
+
+helper context String def : properTerm (distractorList:Sequence(String)): String =
+	self.getProperTerm(distractorList);
+
+helper context String def : properTerm : String =
+	self.getProperTerm(thisModule.distractorList);

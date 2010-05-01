@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match
+END
+SimmetricsSimilarity$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/SimmetricsSimilarity$1.class
+END
+AML2AntScriptsUtils$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/AML2AntScriptsUtils$1.class
+END
+AML2AntScriptsUtils$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/AML2AntScriptsUtils$2.class
+END
+UpperCaseTokenizer.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/UpperCaseTokenizer.class
+END
+DistractorFilter.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/DistractorFilter.class
+END
+JWISimilarity$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/JWISimilarity$1.class
+END
+HyphenTokenizer.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/HyphenTokenizer.class
+END
+SimmetricsSimilarity.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/SimmetricsSimilarity.class
+END
+MatchingMetricsUtils$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/MatchingMetricsUtils$1.class
+END
+AML2AntScriptsUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/AML2AntScriptsUtils.class
+END
+HTTPRequest.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/HTTPRequest.class
+END
+AmwModelHandler$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/AmwModelHandler$1.class
+END
+ProperTermSimilarity$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/ProperTermSimilarity$1.class
+END
+MSRSimilarity$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/MSRSimilarity$1.class
+END
+JWISimilarity.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/JWISimilarity.class
+END
+SymbolTokenizer.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/SymbolTokenizer.class
+END
+MatchingMetricsUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/MatchingMetricsUtils.class
+END
+AmwModelHandler.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/AmwModelHandler.class
+END
+UnderScoreTokenizer.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/UnderScoreTokenizer.class
+END
+ProperTermSimilarity.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/ProperTermSimilarity.class
+END
+TermProcessor.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/TermProcessor.class
+END
+MSRSimilarity.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/MSRSimilarity.class
+END
+Tokenizer.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/bin/match/Tokenizer.class
+END

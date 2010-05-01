@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MatchModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="mmw_match" name="m12m2">
+  <ownedElement xsi:type="Equal" name="name_name" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.0"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.0"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="name_name" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.1"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.1"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="name_name" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.2"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.2"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="name_name" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.3"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.3"/>
+  </ownedElement>
+  <leftM xsi:type="ModelRef" name="m1" ref="Models/Before.ecore">
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+  </leftM>
+  <rightM xsi:type="ModelRef" name="m2" ref="Models/After.ecore">
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+  </rightM>
+</MatchModel>

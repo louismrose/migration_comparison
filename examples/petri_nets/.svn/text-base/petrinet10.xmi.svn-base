@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<lit_petriNets:Net xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lit_petriNets="lit_petriNets" xsi:schemaLocation="lit_petriNets release0.ecore">
+  <places dst="//@transitions.1 //@transitions.0" src="//@transitions.0 //@transitions.3"/>
+  <places name="EString_64004" dst="//@transitions.2 //@transitions.1 //@transitions.4" src="//@transitions.2"/>
+  <places name="EString_15027" dst="//@transitions.3 //@transitions.4" src="//@transitions.1 //@transitions.4"/>
+  <places name="EString_28142" dst="//@transitions.1 //@transitions.2" src="//@transitions.0 //@transitions.1 //@transitions.2"/>
+  <transitions src="//@places.0" dst="//@places.3 //@places.0" name="EString_48915"/>
+  <transitions src="//@places.0 //@places.1 //@places.3" dst="//@places.3 //@places.2"/>
+  <transitions src="//@places.1 //@places.3" dst="//@places.3 //@places.1" name="EString_40443"/>
+  <transitions src="//@places.2" dst="//@places.0" name="EString_57382"/>
+  <transitions src="//@places.1 //@places.2" dst="//@places.2" name="EString_31329"/>
+</lit_petriNets:Net>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="EclipseCon">
+  <figures name="default">
+    <figures xsi:type="gmfgraph:Label" name="ResourceTag" text="&lt;&lt;Resource>>"/>
+    <figures xsi:type="gmfgraph:Rectangle" name="ThickFigure" lineWidth="3" referencingElements="ScheduleNode">
+      <children xsi:type="gmfgraph:Label" name="ThickFigureLabel" referencingElements="ScheduleName"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolylineConnection" name="SolidLineSquareDec" referencingElements="HandoutLink">
+      <sourceDecoration xsi:type="gmfgraph:PolygonDecoration" href="multifile_linked.gmfgraph#SquareDecoration"/>
+    </figures>
+    <figures xsi:type="gmfgraph:RoundedRectangle" name="SlotFigure" lineWidth="2" cornerWidth="20" cornerHeight="20" referencingElements="SlotNode">
+      <layout xsi:type="gmfgraph:FlowLayout" vertical="true" matchMinorSize="true" forceSingleLine="true" minorAlignment="CENTER"/>
+      <children xsi:type="gmfgraph:Label" name="LabelStart" referencingElements="SlotStart"/>
+      <children xsi:type="gmfgraph:Label" name="LabelEnd" text="" referencingElements="SlotEnd"/>
+      <foregroundColor xsi:type="gmfgraph:ConstantColor" value="cyan"/>
+    </figures>
+    <figures xsi:type="gmfgraph:Rectangle" name="ResourceFigure">
+      <children xsi:type="gmfgraph:Label" name="ResourceNameLabel"/>
+      <children xsi:type="gmfgraph:Label" name="ResourceLocationLabel"/>
+    </figures>
+    <figures xsi:type="gmfgraph:Rectangle" name="TutorialFigure">
+      <children xsi:type="gmfgraph:Label" name="Tag" text="&lt;&lt;Tutorial>>"/>
+      <children xsi:type="gmfgraph:Label" name="TitleLabel" text=""/>
+    </figures>
+  </figures>
+  <nodes name="ScheduleNode" figure="ThickFigure"/>
+  <nodes name="PresenterNode">
+    <figure xsi:type="gmfgraph:Rectangle" href="multifile_linked.gmfgraph#ActorFigure"/>
+  </nodes>
+  <nodes name="ResourceNode" figure="ResourceFigure"/>
+  <nodes name="TutorialNode" figure="TutorialFigure"/>
+  <nodes name="SlotNode" figure="SlotFigure"/>
+  <connections name="HandoutLink" figure="SolidLineSquareDec"/>
+  <connections name="AssignTimeLink">
+    <figure xsi:type="gmfgraph:PolylineConnection" href="multifile_linked.gmfgraph#DotLineNoDecorations"/>
+  </connections>
+  <connections name="PresenterLink">
+    <figure xsi:type="gmfgraph:PolylineConnection" href="multifile_linked.gmfgraph#DashLineNoDecorations"/>
+  </connections>
+  <labels name="PresenterName">
+    <figure xsi:type="gmfgraph:Label" href="multifile_linked.gmfgraph#Label"/>
+  </labels>
+  <labels name="ResourceName" figure="ResourceNameLabel"/>
+  <labels name="ResourceLocation" figure="ResourceLocationLabel"/>
+  <labels name="SlotStart" figure="LabelStart"/>
+  <labels name="SlotEnd" figure="LabelEnd"/>
+  <labels name="ScheduleName" figure="ThickFigureLabel"/>
+  <labels name="TutorialLabel" figure="TitleLabel"/>
+  <labels name="ResourceTagLabel" figure="ResourceTag"/>
+</gmfgraph:Canvas>

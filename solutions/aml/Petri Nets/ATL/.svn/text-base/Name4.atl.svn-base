@@ -1,0 +1,78 @@
+-- @atlcompiler atl2006
+module Name4;
+create NameEqual : EqualMM from merged : EqualMM, m2 : Metametamodel, m1 : Metametamodel;
+
+uses EqualMM;
+
+uses Metametamodel;
+
+uses SuitableMetametamodel;
+
+rule SimEqualName {
+ from
+  mergedVar : EqualMM!Equal in merged
+ to
+  e : EqualMM!Equal (
+   name <- mergedVar.name,
+   left <- thisModule.leftElement(mergedVar.left),
+   right <- thisModule.rightElement(mergedVar.right),
+   similarity <- if mergedVar.leftE.name = mergedVar.rightE.name then
+    1
+   else
+    0
+   endif,
+   model <- thisModule.equalModel('merged')
+  )
+}
+
+rule matchModel {
+ from
+  mmw : EqualMM!MatchModel in merged
+ to
+  out : EqualMM!MatchModel (
+   name <- mmw.name,
+   leftM <- mmw.leftM,
+   rightM <- mmw.rightM
+  )
+}
+
+rule modelRef {
+ from
+  mmw : EqualMM!ModelRef in merged
+ to
+  out : EqualMM!ModelRef (
+   name <- mmw.name,
+   ref <- mmw.ref
+  )
+}
+
+lazy rule leftElement {
+ from
+  mmw : EqualMM!LeftElement in merged
+ to
+  out : EqualMM!LeftElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+lazy rule rightElement {
+ from
+  mmw : EqualMM!RightElement in merged
+ to
+  out : EqualMM!RightElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+rule ElementRef {
+ from
+  mmw : EqualMM!ElementRef in merged
+ to
+  out : EqualMM!ElementRef (
+   name <- mmw.name,
+   ref <- mmw.ref,
+   modelRef <- mmw.modelRef
+  )
+}

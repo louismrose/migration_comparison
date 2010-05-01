@@ -1,0 +1,26 @@
+--@atlcompiler atl2006
+library Vectors;
+
+uses Math;
+
+helper def : distance (v1 : Sequence(Real), v2 : Sequence(Real)) : Real =
+	if v1.size() = v2.size() then
+		if thisModule.distFormule(v1, v2).isNaN() then
+			1
+		else
+			thisModule.distFormule(v1, v2)
+		endif
+	else
+		OclUndefined.debug('The vectors do not have the same number of elements')
+	endif;
+
+helper def : distFormule (v1 : Sequence(Real), v2 : Sequence(Real)) : Real =
+	v1->iterate(e; acc : TupleType(ret : Real, index : Integer) = Tuple {ret = 0, index = 1} |
+			Tuple {
+					ret = acc.ret + (e - v2.at(acc.index)).pow(2),
+					index = acc.index + 1
+			}
+		).ret.sqrt();
+
+
+

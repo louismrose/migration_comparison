@@ -1,0 +1,28 @@
+strategy LevenshteinStatisticsPropertiesThresholdMaxSim {
+
+imports Properties;
+imports Statistics;
+
+models {
+
+	
+map2 : EqualModel(m1:"%EMF", m2:"%EMF")
+
+}
+
+modelsFlow {
+	
+	className = Levenshtein[TypeClass[map2]]	
+	--classStat = Statistics[]
+	classThres = ThresholdMaxDelta[classStat]
+	
+	strName = Levenshtein[TypeStrF[map2]]
+	--strProp = Properties[]
+	strFThres = ThresholdMaxDelta[strProp]
+	
+	classStrFMerge = Merge[1.0:strFThres, 1.0:classThres]
+	
+
+}
+
+}

@@ -1,0 +1,269 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1' ?>
+<project name = 'PetriNets' default = 'Rewriting14'>
+  <property file = 'PetriNets.properties'/>
+  <target name = 'loadMetamodels'>
+    <atl.loadModel name = 'EqualMM' metamodel = '%EMF' path = 'Metamodels/EqualMM.ecore'/>
+  </target>
+  <target name = 'loadModels' depends = 'loadMetamodels'>
+    <atl.loadModel name = 'm1' metamodel = '%EMF' path = '${m1}'/>
+    <atl.loadModel name = 'm2' metamodel = '%EMF' path = '${m2}'/>
+    <atl.loadModel name = 'map2' metamodel = 'EqualMM' path = '${EqualModels}/${map2}'/>
+  </target>
+  <target name = 'HOT' depends = 'Rewriting14'>
+    <atl.loadModel name = 'ATL' metamodel = '%EMF' path = 'Metamodels/ATL.ecore'/>
+    <atl.launch path = '../AMLLibrary/ATL/HOT/HOT_match.asm'>
+      <inModel name = 'left' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'right' model = 'm2' metamodelName = 'Metametamodel'/>
+      <inModel name = 'IN1' model = 'rw'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <option name = 'amwModelMappings' value = 'm1=left,m2=right'/>
+      <outModel name = 'OUT' model = 'output' metamodel = 'ATL'/>
+      <superimpose path = '../AMLLibrary/ATL/HOT/HOT_ConceptualLink.asm'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'output' path = '${EqualModels}/rw.amw.atl'>
+      <extractor name = 'ATL'/>
+    </atl.saveModel>
+  </target>
+  <target name = 'TypeClass0'>
+    <atl.launch path = 'ATL/TypeClass0.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'tp' model = 'tp' metamodel = 'EqualMM'/>
+      <inModel name = 'map2' model = 'map2'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'tp' path = '${EqualModels}/tp.amw'/>
+  </target>
+  <target name = 'TypeReference1'>
+    <atl.launch path = 'ATL/TypeReference1.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'typeRef' model = 'typeRef' metamodel = 'EqualMM'/>
+      <inModel name = 'map2' model = 'map2'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'typeRef' path = '${EqualModels}/typeRef.amw'/>
+  </target>
+  <target name = 'TypeAttribute2'>
+    <atl.launch path = 'ATL/TypeAttribute2.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'typeAtt' model = 'typeAtt' metamodel = 'EqualMM'/>
+      <inModel name = 'map2' model = 'map2'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'typeAtt' path = '${EqualModels}/typeAtt.amw'/>
+  </target>
+  <target name = 'Merge3' depends = 'TypeClass0,TypeReference1,TypeAttribute2'>
+    <atl.launch path = 'ATL/Merge3.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'merged' model = 'merged' metamodel = 'EqualMM'/>
+      <inModel name = 'tp' model = 'tp'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <inModel name = 'typeRef' model = 'typeRef'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <inModel name = 'typeAtt' model = 'typeAtt'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'merged' path = '${EqualModels}/merged.amw'/>
+  </target>
+  <target name = 'Name4' depends = 'Merge3'>
+    <atl.launch path = 'ATL/Name4.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'nam' model = 'nam' metamodel = 'EqualMM'/>
+      <inModel name = 'merged' model = 'merged'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'nam' path = '${EqualModels}/nam.amw'/>
+  </target>
+  <target name = 'ThresholdMaxDelta5' depends = 'Name4'>
+    <atl.launch path = 'ATL/ThresholdMaxDelta5.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'filtered' model = 'filtered' metamodel = 'EqualMM'/>
+      <inModel name = 'nam' model = 'nam'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'filtered' path = '${EqualModels}/filtered.amw'/>
+  </target>
+  <target name = 'SF7' depends = 'ThresholdMaxDelta5,Propagation6'>
+    <atl.launch path = 'ATL/SF7.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'sf' model = 'sf' metamodel = 'EqualMM'/>
+      <inModel name = 'prop' model = 'prop'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <inModel name = 'filtered' model = 'filtered'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'sf' path = '${EqualModels}/sf.amw'/>
+  </target>
+  <target name = 'Normalization8' depends = 'SF7'>
+    <atl.launch path = 'ATL/Normalization8.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'norm' model = 'norm' metamodel = 'EqualMM'/>
+      <inModel name = 'sf' model = 'sf'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'norm' path = '${EqualModels}/norm.amw'/>
+  </target>
+  <target name = 'WeightedAverage9' depends = 'Normalization8,Name4'>
+    <atl.launch path = 'ATL/WeightedAverage9.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'tmpresult' model = 'tmpresult' metamodel = 'EqualMM'/>
+      <inModel name = 'norm' model = 'norm'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <inModel name = 'nam' model = 'nam'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'tmpresult' path = '${EqualModels}/tmpresult.amw'/>
+  </target>
+  <target name = 'BothMaxSim10' depends = 'WeightedAverage9'>
+    <atl.launch path = 'ATL/BothMaxSim10.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'result' model = 'result' metamodel = 'EqualMM'/>
+      <inModel name = 'tmpresult' model = 'tmpresult'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'result' path = '${EqualModels}/result.amw'/>
+  </target>
+  <target name = 'Propagation6' depends = 'ThresholdMaxDelta5'>
+    <atl.launch path = '../AMLLibrary/ATL/EcoreMetametamodel/Propagation.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'prop' model = 'prop' metamodel = 'EqualMM'/>
+      <inModel name = 'IN' model = 'filtered'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'prop' path = '${EqualModels}/prop.amw'/>
+  </target>
+  <target name = 'Differentiation11' depends = 'BothMaxSim10'>
+    <atl.launch path = '../AMLLibrary/ATL/EcoreMetametamodel/Differentiation.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'diff' model = 'diff' metamodel = 'EqualMM'/>
+      <inModel name = 'IN1' model = 'result'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'diff' path = '${EqualModels}/diff.amw'/>
+  </target>
+  <target name = 'TypeDifferentiation12' depends = 'Differentiation11'>
+    <atl.launch path = '../AMLLibrary/ATL/EcoreMetametamodel/TypeDifferentiation.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'td' model = 'td' metamodel = 'EqualMM'/>
+      <inModel name = 'IN1' model = 'diff'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'td' path = '${EqualModels}/td.amw'/>
+  </target>
+  <target name = 'ConceptualLink13' depends = 'TypeDifferentiation12'>
+    <atl.launch path = '../AMLLibrary/ATL/EcoreMetametamodel/ConceptualLink.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'cl' model = 'cl' metamodel = 'EqualMM'/>
+      <inModel name = 'IN' model = 'td'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'cl' path = '${EqualModels}/cl.amw'/>
+  </target>
+  <target name = 'Rewriting14' depends = 'loadModels,ConceptualLink13'>
+    <atl.launch path = '../AMLLibrary/ATL/EcoreMetametamodel/Rewriting.asm'>
+      <library name = 'EqualMM' path = '../AMLLibrary/ATL/Helpers/EqualMM.asm'/>
+      <outModel name = 'rw' model = 'rw' metamodel = 'EqualMM'/>
+      <inModel name = 'IN' model = 'cl'/>
+      <inModel name = 'm1' model = 'm1' metamodelName = 'Metametamodel'/>
+      <inModel name = 'm2' model = 'm2' metamodelName = 'Metametamodel'/>
+      <option name = 'extensions' value = 'match.AmwModelHandler,'/>
+      <option name = 'extraClasspath' value = '../AMLLibrary/bin/,'/>
+      <option name = 'user.dir' value = '${basedir}'/>
+      <library name = 'SuitableMetametamodel' path = '../AMLLibrary/ATL/Helpers/EcoreMetametamodel.asm'/>
+      <library name = 'Metametamodel' path = '../AMLLibrary/ATL/Helpers/Metametamodel.asm'/>
+    </atl.launch>
+    <atl.saveModel model = 'rw' path = '${EqualModels}/rw.amw'/>
+  </target>
+</project>

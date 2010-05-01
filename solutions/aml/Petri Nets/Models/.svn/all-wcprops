@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/Models
+END
+After.model
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/Models/After.model
+END
+Before.model
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/Models/Before.model
+END
+After.ecore
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/Models/After.ecore
+END
+Before.ecore
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/Models/Before.ecore
+END

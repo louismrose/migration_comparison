@@ -1,0 +1,181 @@
+// I cannot really ensure that the migration is complete. This is due to the
+// fact that features not known to the target metmodel are automatically unset.
+
+// I do need to specify a rule for every concrete class instead of being able
+// to specify a rule for a super class that also applies to all sub classes.
+
+// What to do on the original model and what to do on the migrated model?
+// I had to swith between the two models back and forth to know where to best
+// implement the migration.
+
+// If I mix source and target metamodel, there is no help as to whether I do
+// not use the two metamodel versions consistently.
+
+// If a reference is made containment, then the values are automatically
+// contained by this reference, even if they were contained otherwise before.
+// What is the criterion here for choosing the containment reference where the
+// values should be contained?
+
+// Models that are split over several files are not really supported.
+
+// I can generate models that lead to an error when opening them. For instance,
+// replace migrated.typedFigure with migrated in the rule for FigureAccessor.
+
+// for certain model files, for every two times I get the error:
+// java.lang.ClassCastException: java.lang.String cannot be cast to org.eclipse.gmf.gmfgraph.LayoutDataIndex: 1, Size: 1
+// 	java.util.ArrayList.RangeCheck(Unknown Source)
+// 	java.util.ArrayList.get(Unknown Source)
+// 	org.eclipse.epsilon.flock.FlockContext.getModelFromRepositoryByIndex(FlockContext.java:85)
+// 	org.eclipse.epsilon.flock.FlockContext.setMigratedModel(FlockContext.java:81)
+// 	org.eclipse.epsilon.flock.dt.launching.FlockLaunchConfigurationDelegate.loadModels(FlockLaunchConfigurationDelegate.java:118)
+// 	org.eclipse.epsilon.flock.dt.launching.FlockLaunchConfigurationDelegate.launch(FlockLaunchConfigurationDelegate.java:52)
+// 	org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:853)
+// 	org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+// 	org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:866)
+// 	org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1069)
+// 	org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+// Which rule is executed, is determined by the order of the rules in the file. However, I
+// would find it more intuitive if the most concrete rule in terms of the context type matches first.
+
+migrate FigureAccessor {
+	if(original.typedFigure.isUndefined()) {
+		var custom = new After!CustomFigure;
+		custom.qualifiedClassName = "org.eclipse.draw2d.IFigure";
+		migrated.typedFigure = custom; 
+	} else {
+		var copy := copy(migrated.typedFigure);
+		
+		var container := original.typedFigure.eContainer().equivalent();
+		var reference := original.typedFigure.eContainmentFeature();
+		reference := container.type().getEStructuralFeature(reference.name);
+		if(reference.many) {
+			container.eGet(reference).add(migrated.typedFigure);
+		} else {
+			container.eSet(reference, migrated.typedFigure);
+		}
+		migrated.typedFigure = copy;
+		copy.name = null;
+	}
+	introduceFigureDescriptor(original, migrated.typedFigure);
+}
+
+migrate PolylineConnection {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate PolylineDecoration {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate PolygonDecoration {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate CustomDecoration {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate Rectangle {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate RoundedRectangle {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate Ellipse {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate Polygon {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate Polyline {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate Label {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate LabeledContainer {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate CustomConnection {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate CustomDecoration {
+	introduceFigureDescriptor(original, migrated);
+}
+
+migrate CustomFigure {
+	introduceFigureDescriptor(original, migrated);
+}
+
+operation introduceFigureDescriptor(original : EObject, migrated : EObject) : Any {
+	var elements := original.referencingElements;
+	if(not elements.isEmpty()) {
+		var topLevel := getTopLevel(migrated);
+		var descriptor := getOrCreateDescriptor(topLevel);
+		for(element in elements) {
+			element.equivalent().figure = descriptor;
+		}
+		if(migrated <> topLevel) {
+			var access := getOrCreateAccess(descriptor, migrated);
+			for(element in elements) {
+				var e := element.equivalent();
+				if(e.isKindOf(After!DiagramLabel) or e.isKindOf(After!Compartment)) {
+					e.accessor = access;
+				}
+			}
+		}
+	}
+}
+
+operation getOrCreateDescriptor(topLevel : EObject) : After!FigureDescriptor {
+	if(topLevel.isKindOf(After!FigureDescriptor)) {
+		return topLevel;
+	}
+	var gallery := topLevel.eContainer();
+	var descriptor := new After!FigureDescriptor;
+	descriptor.name = topLevel.name;
+	gallery.descriptors.add(descriptor);			
+	descriptor.actualFigure = topLevel;
+	return descriptor;
+}
+
+operation getTopLevel(handle : EObject) : EObject {
+	var topLevel := handle;
+	while(not topLevel.isUndefined() and not topLevel.eContainer().isKindOf(After!FigureGallery)) {
+		topLevel = topLevel.eContainer();
+	}
+	return topLevel;
+}
+
+operation getOrCreateAccess(descriptor : After!FigureDescriptor, figure : After!Figure) : After!ChildAccess {
+	var access := getAccess(descriptor, figure);
+	if(access.isUndefined()) {
+		access := new After!ChildAccess;
+		access.figure = figure;
+		descriptor.accessors.add(access);
+	}
+	return access;
+}
+
+operation getAccess(descriptor : After!FigureDescriptor, figure : After!Figure) : After!ChildAccess {
+	for(access in descriptor.accessors) {
+		if(access.figure == figure) {
+			return access;
+		}
+	}
+}
+
+operation copy(original : EObject) : EObject {
+	var emfTool = new Native("org.eclipse.epsilon.emc.emf.tools.EmfTool");
+	var ecoreUtil = emfTool.ecoreUtil;
+	return ecoreUtil.copy(original);
+}

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/migration-comparison/!svn/ver/100/resources/ecore2ecore/PetriNets/.project
+END
+plugin.properties
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/plugin.properties
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/build.properties
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/plugin.xml
+END

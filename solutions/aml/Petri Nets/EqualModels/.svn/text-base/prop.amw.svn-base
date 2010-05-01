@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MatchModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="mmw_match" xmlns:_1="mmw_propagation" name="m12m2">
+  <ownedElement xsi:type="_1:PropagationEdge" name="Net_Net_Place_Place" incomingLink="//Place_//Place" outgoingLink="//Net_//Net" propagation="0.25"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Place_Place_Net_Net" incomingLink="//Net_//Net" outgoingLink="//Place_//Place" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Net_Net_Transition_Transition" incomingLink="//Transition_//Transition" outgoingLink="//Net_//Net" propagation="0.25"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Transition_Transition_Net_Net" incomingLink="//Net_//Net" outgoingLink="//Transition_//Transition" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Net_Net_places_places" incomingLink="//Net/places_//Net/places" outgoingLink="//Net_//Net" propagation="0.25"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="places_places_Net_Net" incomingLink="//Net_//Net" outgoingLink="//Net/places_//Net/places" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Net_Net_transitions_transitions" incomingLink="//Net/transitions_//Net/transitions" outgoingLink="//Net_//Net" propagation="0.25"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="transitions_transitions_Net_Net" incomingLink="//Net_//Net" outgoingLink="//Net/transitions_//Net/transitions" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Place_Place_Net_Net" incomingLink="//Net_//Net" outgoingLink="//Place_//Place" propagation="0.3333333333333333"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Net_Net_Place_Place" incomingLink="//Place_//Place" outgoingLink="//Net_//Net" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Place_Place_net_net" incomingLink="//Place/net_//Place/net" outgoingLink="//Place_//Place" propagation="0.3333333333333333"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="net_net_Place_Place" incomingLink="//Place_//Place" outgoingLink="//Place/net_//Place/net" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Place_Place_name_name" incomingLink="//Place/name_//Place/name" outgoingLink="//Place_//Place" propagation="0.3333333333333333"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="name_name_Place_Place" incomingLink="//Place_//Place" outgoingLink="//Place/name_//Place/name" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Transition_Transition_Net_Net" incomingLink="//Net_//Net" outgoingLink="//Transition_//Transition" propagation="0.3333333333333333"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Net_Net_Transition_Transition" incomingLink="//Transition_//Transition" outgoingLink="//Net_//Net" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Transition_Transition_net_net" incomingLink="//Transition/net_//Transition/net" outgoingLink="//Transition_//Transition" propagation="0.3333333333333333"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="net_net_Transition_Transition" incomingLink="//Transition_//Transition" outgoingLink="//Transition/net_//Transition/net" propagation="1.0"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="Transition_Transition_name_name" incomingLink="//Transition/name_//Transition/name" outgoingLink="//Transition_//Transition" propagation="0.3333333333333333"/>
+  <ownedElement xsi:type="_1:PropagationEdge" name="name_name_Transition_Transition" incomingLink="//Transition_//Transition" outgoingLink="//Transition/name_//Transition/name" propagation="1.0"/>
+  <methods name="Propagation"/>
+</MatchModel>

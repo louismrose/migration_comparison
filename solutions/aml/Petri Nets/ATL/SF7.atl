@@ -1,0 +1,88 @@
+-- @atlcompiler atl2006
+module SF7;
+create SFEqual : EqualMM from prop : EqualMM, filtered : EqualMM, m2 : Metametamodel, m1 : Metametamodel;
+
+uses EqualMM;
+
+uses Metametamodel;
+
+uses SuitableMetametamodel;
+
+rule SimEqualSF {
+ from
+  filteredVar : EqualMM!Equal in filtered
+ using
+ {
+  propEdges : Sequence(OclAny) = thisModule.propMap.get(filteredVar.xmiIDs_Equal);
+ }
+ to
+  e : EqualMM!Equal (
+   name <- filteredVar.name,
+   left <- thisModule.leftElement(filteredVar.left),
+   right <- thisModule.rightElement(filteredVar.right),
+   similarity <- if propEdges.oclIsUndefined() then
+    filteredVar.similarity
+   else
+    if propEdges.isEmpty() then
+     filteredVar.similarity
+    else
+     filteredVar.similarity + propEdges->collect(e |
+      e.propagation * thisModule.mapEqual.get(e.outgoingLink)->first().similarity
+     )->sum()
+    endif
+   endif,
+   model <- thisModule.equalModel('filtered')
+  )
+}
+
+rule matchModel {
+ from
+  mmw : EqualMM!MatchModel in filtered
+ to
+  out : EqualMM!MatchModel (
+   name <- mmw.name,
+   leftM <- mmw.leftM,
+   rightM <- mmw.rightM
+  )
+}
+
+rule modelRef {
+ from
+  mmw : EqualMM!ModelRef in filtered
+ to
+  out : EqualMM!ModelRef (
+   name <- mmw.name,
+   ref <- mmw.ref
+  )
+}
+
+lazy rule leftElement {
+ from
+  mmw : EqualMM!LeftElement in filtered
+ to
+  out : EqualMM!LeftElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+lazy rule rightElement {
+ from
+  mmw : EqualMM!RightElement in filtered
+ to
+  out : EqualMM!RightElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+rule ElementRef {
+ from
+  mmw : EqualMM!ElementRef in filtered
+ to
+  out : EqualMM!ElementRef (
+   name <- mmw.name,
+   ref <- mmw.ref,
+   modelRef <- mmw.modelRef
+  )
+}

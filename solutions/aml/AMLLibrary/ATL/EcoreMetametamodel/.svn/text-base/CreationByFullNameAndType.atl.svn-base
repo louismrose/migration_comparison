@@ -1,0 +1,422 @@
+-- @atlcompiler atl2006
+module CreationByFullNameAndType; -- Module Template
+create OUT : EqualMM from IN : EqualMM, m1 : Metametamodel, m2 : Metametamodel;
+
+uses EqualMM;
+
+helper def: methodName : String = 'Creation By FullName And Type';
+
+
+helper def : rightMap : Map(String, OclAny) =
+	thisModule.fullNameMap('m2');
+
+helper def : leftMap : Map(String, OclAny) =
+	thisModule.fullNameMap('m1');
+
+helper def: right (element : OclAny) : OclAny =
+	thisModule.rightMap.get(element.fullName);
+
+helper def: left (element : OclAny) : OclAny =
+	thisModule.leftMap.get(element.fullName);
+
+
+
+abstract rule Link {
+	from
+		l : Metametamodel!EModelElement in m1 
+	to
+		alink : EqualMM!Link (
+			name <- l.name, 
+			model <- thisModule.uniqueEqualModel,
+			left <- leftE		
+		),
+		leftE : EqualMM!LeftElement (
+			name <- l.name,
+			element <- leftERef
+		),
+		leftERef : EqualMM!ElementRef (
+			name <- l.name,
+			ref <- l.__xmiID__,
+			modelRef <- thisModule.uniqueEqualModel.leftM
+		)	
+}
+
+abstract rule Added {
+	from
+		r : Metametamodel!EModelElement in m2 (
+			thisModule.left(r).oclIsUndefined()
+		)
+	to
+		alink : EqualMM!Added (
+			name <- r.name, 
+			model <- thisModule.uniqueEqualModel,
+			right <- rightE		
+		),
+		rightE : EqualMM!RightElement (
+			name <- r.name,
+			element <- rightERef
+		),
+		rightERef : EqualMM!ElementRef (
+			name <- r.name,
+			ref <- r.__xmiID__,
+			modelRef <- thisModule.uniqueEqualModel.rightM
+		)	
+}
+
+rule AddedAttribute extends Added{
+	from
+		r : Metametamodel!EAttribute
+--		(
+--			not r.containedAnn	
+--		)
+	to
+		alink : EqualMM!AddedAttribute
+}
+
+		
+--rule AddedPackage extends Added {
+--	from
+--		r : Metametamodel!EPackage 
+--	to
+--		alink : EqualMM!Added
+--}
+--
+rule AddedEnumeration extends Added {
+	from
+		r : Metametamodel!EEnum 
+	to
+		alink : EqualMM!AddedEnumeration
+}
+
+--rule AddedEnumLiteral extends Added {
+--	from
+--		r : Metametamodel!EEnumLiteral
+--	to
+--		alink : EqualMM!AddedEnumLiteral
+--}
+
+rule AddedClass extends Added {
+	from
+		r : Metametamodel!EClass
+	to
+		alink : EqualMM!AddedClass
+}
+
+rule AddedDatatype extends Added {
+	from
+		r : Metametamodel!EDataType
+		
+	to
+		alink : EqualMM!AddedDataType
+}
+
+rule AddedReference extends Added {
+	from
+		r : Metametamodel!EReference
+--		(
+--			not r.containedAnn		
+--		)
+	to
+		alink : EqualMM!AddedReference
+}
+
+
+
+rule Enumeration extends Link {
+	from
+		l : Metametamodel!EEnum
+	to
+		alink : EqualMM!Link
+}
+
+
+rule EqualEnumeration extends Enumeration {
+	from
+		l : Metametamodel!EEnum 
+		(
+			not thisModule.right(l).oclIsUndefined()
+		)
+	to
+		alink : EqualMM!EqualEnumeration (
+			name <- l.leftName_rightName(thisModule.right(l)),
+			right <- rightE
+			--,
+			--similarity <- thisModule.similarityValue
+		),
+		rightE : EqualMM!RightElement (
+			name <- thisModule.right(l).name,
+			element <- rightERef
+		),
+		rightERef : EqualMM!ElementRef (
+			name <- thisModule.right(l).name,
+			ref <- thisModule.right(l).__xmiID__,
+			modelRef <- thisModule.uniqueEqualModel.rightM
+		)
+		
+}
+
+rule NotEqualEnumeration extends Enumeration {
+	from
+		l : Metametamodel!EEnum
+	to 
+		alink : EqualMM!DeletedEnumeration
+}
+rule DataType extends Link {
+	from 
+		l : Metametamodel!EDataType 
+--		(
+--			l.oclIsTypeOf(Metametamodel!EDataType)	
+--		)
+	to
+		alink: EqualMM!EqualDataType
+}
+
+rule EqualDataType extends DataType {
+	from
+		l : Metametamodel!EDataType (
+			not thisModule.right(l).oclIsUndefined()
+		)
+	to
+		alink : EqualMM!EqualDataType(
+			name <- l.leftName_rightName(thisModule.right(l)),
+			right <- rightE
+			--,
+			--similarity <- thisModule.similarityValue
+		),
+		rightE : EqualMM!RightElement (
+			name <- thisModule.right(l).name,
+			element <- rightERef
+		),
+		rightERef : EqualMM!ElementRef (
+			name <- thisModule.right(l).name,
+			ref <- thisModule.right(l).__xmiID__,
+			modelRef <- thisModule.uniqueEqualModel.rightM
+		)
+}
+
+rule NotEqualDataType extends DataType {
+	from
+		l : Metametamodel!EDataType
+	to
+		alink : EqualMM!DeletedDataType(
+			--name <- l.name.debug(l.oclType())	
+		)
+}
+
+
+--rule EnumLiteral extends Link {
+--	from
+--		l : Metametamodel!EEnumLiteral
+--	to
+--		alink : EqualMM!Link
+--}
+--
+--rule EqualEnumLiteral extends EnumLiteral {
+--	from
+--		l : Metametamodel!EEnumLiteral (
+--			not thisModule.right(l).oclIsUndefined()
+--		)
+--	to
+--		alink : EqualMM!EqualEnumLiteral(
+--			name <- l.leftName_rightName(thisModule.right(l)),
+--			right <- rightE
+--			--,
+--			--similarity <- thisModule.similarityValue
+--		),
+--		rightE : EqualMM!RightElement (
+--			name <- thisModule.right(l).name,
+--			element <- rightERef
+--		),
+--		rightERef : EqualMM!ElementRef (
+--			name <- thisModule.right(l).name,
+--			ref <- thisModule.right(l).__xmiID__,
+--			modelRef <- thisModule.uniqueEqualModel.rightM
+--		)
+--}
+--
+--rule NotEqualEnumLiteral extends EnumLiteral {
+--	from
+--		l : Metametamodel!EEnumLiteral
+--	to
+--		alink : EqualMM!DeletedEnumLiteral
+--}
+
+
+--
+--rule Package extends Link {
+--	from
+--		l : Metametamodel!EPackage
+--	to
+--		alink : EqualMM!Link
+--}
+--
+--rule NotEqualPackage extends Package {
+--	from
+--		l : Metametamodel!EPackage
+--	to 
+--		alink : EqualMM!Deleted
+--}
+--
+--rule EqualPackage extends Package {
+--	from
+--		l : Metametamodel!EPackage (
+--			not thisModule.right(l).oclIsUndefined()
+--		)
+--	to
+--		alink : EqualMM!EqualPackage (
+--			name <- l.name + '_' + thisModule.right(l).name,
+--			right <- rightE,
+--			similarity <- thisModule.similarityValue
+--		),
+--		rightE : EqualMM!RightElement (
+--			name <- thisModule.right(l).name,
+--			element <- rightERef
+--		),
+--		rightERef : EqualMM!ElementRef (
+--			name <- thisModule.right(l).name,
+--			ref <- thisModule.right(l).__xmiID__,
+--			modelRef <- thisModule.uniqueEqualModel.rightM
+--		)
+--}
+
+rule Class extends Link {
+	from
+		l : Metametamodel!EClass
+	to
+		alink : EqualMM!Link
+}
+
+rule NotEqualClass extends Class {
+	from
+		l : Metametamodel!EClass
+	to 
+		alink : EqualMM!DeletedClass
+}
+
+rule EqualClass extends Class {
+    from
+        l : Metametamodel!EClass (
+			not thisModule.right(l).oclIsUndefined()
+		)
+	to
+		alink : EqualMM!EqualClass (
+				name <- l.leftName_rightName(thisModule.right(l)),
+				right <- rightE
+				),
+				rightE : EqualMM!RightElement (
+--					name <- thisModule.right(l).name,
+					element <- rightERef
+				),
+				rightERef : EqualMM!ElementRef (
+--					name <- thisModule.right(l).name,
+					ref <- thisModule.right(l).__xmiID__,
+					modelRef <- thisModule.uniqueEqualModel.rightM
+				)
+			
+}
+
+abstract rule Attribute extends Link {
+	from
+		l : Metametamodel!EAttribute
+	to
+		alink : EqualMM!Link
+}
+
+rule EqualAttribute extends Attribute {
+    from
+        l : Metametamodel!EAttribute (
+			not thisModule.right(l).oclIsUndefined()
+--			and
+--			not l.containedAnn	
+		)
+	to
+		alink : EqualMM!EqualAttribute (
+				name <- l.leftName_rightName(thisModule.right(l)),
+				right <- rightE
+		),
+		rightE : EqualMM!RightElement (
+					--name <- thisModule.right(l).name,
+					element <- rightERef
+				),
+		rightERef : EqualMM!ElementRef (
+					--name <- thisModule.right(l).name,
+					ref <- thisModule.right(l).__xmiID__,
+					modelRef <- thisModule.uniqueEqualModel.rightM
+		)
+}
+
+rule NotEqualAttribute extends Attribute {
+    from
+        l : Metametamodel!EAttribute 
+--		(
+--        	not l.containedAnn	
+--        )
+	to
+		alink : EqualMM!DeletedAttribute
+}
+
+abstract rule Reference extends Link {
+	from
+		l : Metametamodel!EReference
+	to
+		alink : EqualMM!Link
+}
+
+rule EqualReference extends Reference {
+    from
+        l : Metametamodel!EReference (
+			not thisModule.right(l).oclIsUndefined()
+--			and
+--			not l.containedAnn	
+		)
+	to
+		alink : EqualMM!EqualReference (
+				name <- l.leftName_rightName(thisModule.right(l)),
+				right <- rightE
+		),
+		rightE : EqualMM!RightElement (
+					--name <- thisModule.right(l).name,
+					element <- rightERef
+				),
+		rightERef : EqualMM!ElementRef (
+			--name <- thisModule.right(l).name,
+			ref <- thisModule.right(l).__xmiID__,
+			modelRef <- thisModule.uniqueEqualModel.rightM
+		)
+}
+
+rule NotEqualReference extends Reference {
+	from
+		l : Metametamodel!EReference
+--		(
+--			not l.containedAnn	
+--		)
+	to
+		alink : EqualMM!DeletedReference
+}
+
+rule modelref {
+	from
+		mmw : EqualMM!ModelRef
+	to
+		out : EqualMM!ModelRef (
+			name <- mmw.name,
+			ref <- mmw.ref
+		)
+}
+
+
+rule matchmodel {
+	from
+		mmw: EqualMM!MatchModel 
+	to
+		model : EqualMM!MatchModel (
+			name <- mmw.name,
+			leftM <- mmw.leftM,
+			rightM <- mmw.rightM,
+			methods <- mmw.methods->union(Sequence{method})
+		),
+		method : EqualMM!Method (
+			name <- thisModule.methodName
+		)	
+}

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match
+END
+SymbolTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/SymbolTokenizer.java
+END
+JWISimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/JWISimilarity.java
+END
+MatchingMetricsUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/MatchingMetricsUtils.java
+END
+AmwModelHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/AmwModelHandler.java
+END
+UnderScoreTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/UnderScoreTokenizer.java
+END
+ProperTermSimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/ProperTermSimilarity.java
+END
+TermProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/TermProcessor.java
+END
+MSRSimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/MSRSimilarity.java
+END
+Tokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/Tokenizer.java
+END
+UpperCaseTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/UpperCaseTokenizer.java
+END
+DistractorFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/DistractorFilter.java
+END
+SimmetricsSimilarity.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/SimmetricsSimilarity.java
+END
+HyphenTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/HyphenTokenizer.java
+END
+AML2AntScriptsUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/AML2AntScriptsUtils.java
+END
+HTTPRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/src/match/HTTPRequest.java
+END

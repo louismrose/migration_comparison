@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MatchModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="mmw_match" name="m12m2">
+  <ownedElement xsi:type="Equal" name="Net_Net" similarity="1.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.0"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.0"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Place_Place" similarity="0.7500000000000001">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.7"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.7"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Transition_Transition" similarity="0.7500000000000001">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.14"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.14"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="places_places" similarity="0.22058823529411767">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.18"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.18"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="transitions_transitions" similarity="0.22058823529411767">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.33"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.33"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="net_net" similarity="0.23529411764705885">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.49"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.49"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="net_net" similarity="0.17647058823529413">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.52"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.52"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="net_net" similarity="0.17647058823529413">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.55"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.55"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="net_net" similarity="0.17647058823529413">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.91"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.91"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="net_net" similarity="0.23529411764705885">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.94"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.94"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="net_net" similarity="0.17647058823529413">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.97"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.97"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="name_name" similarity="0.23529411764705885">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.130"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.130"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="name_name" similarity="0.17647058823529413">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.131"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.131"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="name_name" similarity="0.17647058823529413">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.132"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.132"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="name_name" similarity="0.23529411764705885">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.133"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.133"/>
+  </ownedElement>
+  <leftM xsi:type="ModelRef" name="m1" ref="Models/Before.ecore">
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+  </leftM>
+  <rightM xsi:type="ModelRef" name="m2" ref="Models/After.ecore">
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+  </rightM>
+</MatchModel>

@@ -1,0 +1,85 @@
+-- @atlcompiler atl2006
+module Merge3;
+create MergeEqual : EqualMM from tp : EqualMM, typeRef : EqualMM, typeAtt : EqualMM, m2 : Metametamodel, m1 : Metametamodel;
+
+uses EqualMM;
+
+uses Metametamodel;
+
+uses SuitableMetametamodel;
+
+rule AggrEqualMerge {
+ from
+  tpVar : EqualMM!Equal
+  (
+   thisModule.map.get(tpVar.xmiIDs_Equal) = tpVar
+  )
+ to
+  e : EqualMM!Equal (
+   name <- tpVar.name,
+   left <- thisModule.leftElement(tpVar.left),
+   right <- thisModule.rightElement(tpVar.right),
+   similarity <- tpVar.similarity,
+   model <- thisModule.equalModel('tp')
+  )
+}
+
+rule matchModel {
+ from
+  mmw : EqualMM!MatchModel in tp
+ to
+  out : EqualMM!MatchModel (
+   name <- mmw.name,
+   leftM <- mmw.leftM,
+   rightM <- mmw.rightM
+  )
+}
+
+rule modelRef {
+ from
+  mmw : EqualMM!ModelRef in tp
+ to
+  out : EqualMM!ModelRef (
+   name <- mmw.name,
+   ref <- mmw.ref
+  )
+}
+
+lazy rule leftElement {
+ from
+  mmw : EqualMM!LeftElement
+ to
+  out : EqualMM!LeftElement (
+   name <- mmw.name,
+   element <- thisModule.ElementRef(mmw.element)
+  )
+}
+
+lazy rule rightElement {
+ from
+  mmw : EqualMM!RightElement
+ to
+  out : EqualMM!RightElement (
+   name <- mmw.name,
+   element <- thisModule.ElementRef(mmw.element)
+  )
+}
+
+lazy rule ElementRef {
+ from
+  mmw : EqualMM!ElementRef
+ to
+  out : EqualMM!ElementRef (
+   name <- mmw.name,
+   ref <- mmw.ref,
+   modelRef <- mmw.getModelRef('tp')
+  )
+}
+
+helper def: modelWeight() : Map(EqualMM!MatchModel, Real) =
+ Map {(thisModule.equalModel('tp'), 1), (thisModule.equalModel('typeRef'), 1), (thisModule.equalModel('typeAtt'), 1)};
+
+helper context EqualMM!Equal def: sum : Real =
+ thisModule.mapEqual.get(self.xmiIDs_Equal)->iterate(e; acc : Real = 0 |
+  acc + e.similarity * thisModule.modelWeight().get(e.model)
+ );

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="AML" xmlns:_1="OCL">
+  <Matcher location="1:1-28:2" name="LevenshteinStatisticsPropertiesThresholdMaxSim">
+    <matchers location="3:1-3:20" name="Properties"/>
+    <matchers location="4:1-4:20" name="Statistics"/>
+    <modelsBlock location="6:1-11:2">
+      <models xsi:type="_1:MappingModel" location="9:1-9:40" name="map2">
+        <leftModel location="9:19-9:28" name="m1">
+          <referenceModel href="new-model#/1"/>
+        </leftModel>
+        <rightModel location="9:30-9:39" name="m2">
+          <referenceModel href="new-model#/2"/>
+        </rightModel>
+      </models>
+    </modelsBlock>
+    <modelsFlowsBlock location="13:1-26:2">
+      <modelsFlows location="15:2-15:42">
+        <commentsAfter>--classStat = Statistics[]</commentsAfter>
+        <outMappingModel location="15:2-15:11" name="className"/>
+        <inMappingModel xsi:type="MethodCall" location="15:26-15:41">
+          <inMappingModel xsi:type="MappingModelRefExp" location="15:36-15:40" referredMappingModel="/0/@modelsBlock/@models.0"/>
+        </inMappingModel>
+      </modelsFlows>
+      <modelsFlows location="17:2-17:43">
+        <commentsBefore>--classStat = Statistics[]</commentsBefore>
+        <outMappingModel location="17:2-17:12" name="classThres">
+          <commentsBefore>--classStat = Statistics[]</commentsBefore>
+        </outMappingModel>
+        <inMappingModel xsi:type="MappingModelRefExp" location="17:33-17:42"/>
+      </modelsFlows>
+      <modelsFlows location="19:2-19:39">
+        <commentsAfter>--strProp = Properties[]</commentsAfter>
+        <outMappingModel location="19:2-19:9" name="strName"/>
+        <inMappingModel xsi:type="MethodCall" location="19:24-19:38">
+          <inMappingModel xsi:type="MappingModelRefExp" location="19:33-19:37" referredMappingModel="/0/@modelsBlock/@models.0"/>
+        </inMappingModel>
+      </modelsFlows>
+      <modelsFlows location="21:2-21:40">
+        <commentsBefore>--strProp = Properties[]</commentsBefore>
+        <outMappingModel location="21:2-21:11" name="strFThres">
+          <commentsBefore>--strProp = Properties[]</commentsBefore>
+        </outMappingModel>
+        <inMappingModel xsi:type="MappingModelRefExp" location="21:32-21:39"/>
+      </modelsFlows>
+      <modelsFlows location="23:2-23:56">
+        <outMappingModel location="23:2-23:16" name="classStrFMerge"/>
+        <inMappingModel xsi:type="WeightedModelExp" location="23:25-23:39" weight="1.0">
+          <modelFlowExp xsi:type="MappingModelRefExp" location="23:30-23:39" referredMappingModel="/0/@modelsFlowsBlock/@modelsFlows.3/@outMappingModel"/>
+        </inMappingModel>
+        <inMappingModel xsi:type="WeightedModelExp" location="23:41-23:55" weight="1.0">
+          <modelFlowExp xsi:type="MappingModelRefExp" location="23:45-23:55" referredMappingModel="/0/@modelsFlowsBlock/@modelsFlows.1/@outMappingModel"/>
+        </inMappingModel>
+      </modelsFlows>
+    </modelsFlowsBlock>
+  </Matcher>
+  <_1:ReferenceModel location="9:22-9:28" name="%EMF"/>
+  <_1:ReferenceModel location="9:33-9:39" name="%EMF"/>
+</xmi:XMI>

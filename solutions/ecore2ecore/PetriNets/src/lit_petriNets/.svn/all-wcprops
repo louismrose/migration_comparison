@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets
+END
+Lit_petriNetsPackage.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets/Lit_petriNetsPackage.java
+END
+Place.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets/Place.java
+END
+Arc.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets/Arc.java
+END
+Net.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets/Net.java
+END
+PTArc.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets/PTArc.java
+END
+TPArc.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets/TPArc.java
+END
+Transition.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets/Transition.java
+END
+Lit_petriNetsFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/migration-comparison/!svn/ver/39/resources/ecore2ecore/PetriNets/src/lit_petriNets/Lit_petriNetsFactory.java
+END

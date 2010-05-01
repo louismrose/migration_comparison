@@ -1,0 +1,77 @@
+-- @atlcompiler atl2006
+module ThresholdMaxDelta5;
+create ThresholdMaxDeltaEqual : EqualMM from nam : EqualMM, m2 : Metametamodel, m1 : Metametamodel;
+
+uses EqualMM;
+
+uses Metametamodel;
+
+uses SuitableMetametamodel;
+
+rule SelEqualThresholdMaxDelta {
+ from
+  namVar : EqualMM!Equal in nam
+  (
+   namVar.similarity > 0.5 and namVar.similarity >= namVar.model.mapRangeByLeft.get(namVar.leftE).maxD and namVar.similarity <= namVar.model.mapRangeByLeft.get(namVar.leftE).max
+  )
+ to
+  e : EqualMM!Equal (
+   name <- namVar.name,
+   left <- thisModule.leftElement(namVar.left),
+   right <- thisModule.rightElement(namVar.right),
+   similarity <- namVar.similarity,
+   model <- thisModule.equalModel('nam')
+  )
+}
+
+rule matchModel {
+ from
+  mmw : EqualMM!MatchModel in nam
+ to
+  out : EqualMM!MatchModel (
+   name <- mmw.name,
+   leftM <- mmw.leftM,
+   rightM <- mmw.rightM
+  )
+}
+
+rule modelRef {
+ from
+  mmw : EqualMM!ModelRef in nam
+ to
+  out : EqualMM!ModelRef (
+   name <- mmw.name,
+   ref <- mmw.ref
+  )
+}
+
+lazy rule leftElement {
+ from
+  mmw : EqualMM!LeftElement in nam
+ to
+  out : EqualMM!LeftElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+lazy rule rightElement {
+ from
+  mmw : EqualMM!RightElement in nam
+ to
+  out : EqualMM!RightElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+rule ElementRef {
+ from
+  mmw : EqualMM!ElementRef in nam
+ to
+  out : EqualMM!ElementRef (
+   name <- mmw.name,
+   ref <- mmw.ref,
+   modelRef <- mmw.modelRef
+  )
+}

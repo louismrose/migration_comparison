@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Matcher xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="AML" xmlns:_1="OCL" name="PetriNets">
+  <methods xsi:type="CreateEqual" location="20:1-24:2" name="TypeClass">
+    <inPattern location="21:2-23:21">
+      <filter xsi:type="_1:OperatorCallExp" location="22:4-23:21" operationName="and">
+        <source xsi:type="_1:NavigationOrAttributeCallExp" location="22:4-22:20" name="isClass">
+          <source xsi:type="_1:ThisLeftExp" location="22:4-22:12"/>
+        </source>
+        <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="23:4-23:21" name="isClass">
+          <source xsi:type="_1:ThisRightExp" location="23:4-23:13"/>
+        </arguments>
+      </filter>
+    </inPattern>
+  </methods>
+  <methods xsi:type="CreateEqual" location="38:1-42:2" name="TypeReference">
+    <inPattern location="39:2-41:26">
+      <filter xsi:type="_1:OperatorCallExp" location="40:5-41:26" operationName="and">
+        <source xsi:type="_1:NavigationOrAttributeCallExp" location="40:5-40:25" name="isReference">
+          <source xsi:type="_1:ThisLeftExp" location="40:5-40:13"/>
+        </source>
+        <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="41:5-41:26" name="isReference">
+          <source xsi:type="_1:ThisRightExp" location="41:5-41:14"/>
+        </arguments>
+      </filter>
+    </inPattern>
+  </methods>
+  <methods xsi:type="CreateEqual" location="32:1-36:2" name="TypeAttribute">
+    <inPattern location="33:2-35:26">
+      <filter xsi:type="_1:OperatorCallExp" location="34:5-35:26" operationName="and">
+        <source xsi:type="_1:NavigationOrAttributeCallExp" location="34:5-34:25" name="isAttribute">
+          <source xsi:type="_1:ThisLeftExp" location="34:5-34:13"/>
+        </source>
+        <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="35:5-35:26" name="isAttribute">
+          <source xsi:type="_1:ThisRightExp" location="35:5-35:14"/>
+        </arguments>
+      </filter>
+    </inPattern>
+  </methods>
+  <methods xsi:type="AggrEqual" location="266:1-268:2" name="Merge">
+    <inPattern location="267:2-266:16"/>
+    <sim location="267:2-267:12">
+      <value xsi:type="_1:ThisSimExp" location="267:5-267:12"/>
+    </sim>
+  </methods>
+  <methods xsi:type="SimEqual" location="77:1-84:2" name="Name">
+    <inPattern location="79:2-78:2"/>
+    <sim location="79:2-83:8">
+      <value xsi:type="_1:IfExp" location="79:5-83:8">
+        <thenExpression xsi:type="_1:RealExp" location="80:3-80:6" realSymbol="1.0"/>
+        <condition xsi:type="_1:OperatorCallExp" location="79:8-79:38" operationName="=">
+          <source xsi:type="_1:NavigationOrAttributeCallExp" location="79:8-79:21" name="name">
+            <source xsi:type="_1:ThisLeftExp" location="79:8-79:16"/>
+          </source>
+          <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="79:24-79:38" name="name">
+            <source xsi:type="_1:ThisRightExp" location="79:24-79:33"/>
+          </arguments>
+        </condition>
+        <elseExpression xsi:type="_1:IntegerExp" location="82:4-82:5" integerSymbol="0"/>
+      </value>
+    </sim>
+  </methods>
+  <methods xsi:type="SelEqual" location="239:1-246:2" name="ThresholdMaxDelta">
+    <commentsBefore>-- Delta 0.001, 0.002, 0.004, 0.006, 0.008, and 0.01 </commentsBefore>
+    <commentsBefore>-- Do (page 114) indicates the best delta is 0.008 and the best threshold is 0.5</commentsBefore>
+    <inPattern location="242:2-245:68">
+      <filter xsi:type="_1:OperatorCallExp" location="242:7-245:68" operationName="and">
+        <source xsi:type="_1:OperatorCallExp" location="242:7-242:20" operationName=">">
+          <source xsi:type="_1:ThisSimExp" location="242:7-242:14"/>
+          <arguments xsi:type="_1:RealExp" location="242:17-242:20" realSymbol="0.5"/>
+        </source>
+        <arguments xsi:type="_1:OperatorCallExp" location="244:5-245:67" operationName="and">
+          <source xsi:type="_1:OperatorCallExp" location="244:5-244:64" operationName=">=">
+            <source xsi:type="_1:ThisSimExp" location="244:5-244:12"/>
+            <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="244:16-244:64" name="maxD">
+              <source xsi:type="_1:OperationCallExp" location="244:16-244:59" operationName="get">
+                <source xsi:type="_1:NavigationOrAttributeCallExp" location="244:16-244:45" name="mapRangeByLeft">
+                  <source xsi:type="_1:ThisEqualModelExp" location="244:16-244:30"/>
+                </source>
+                <arguments xsi:type="_1:ThisLeftExp" location="244:50-244:58"/>
+              </source>
+            </arguments>
+          </source>
+          <arguments xsi:type="_1:OperatorCallExp" location="245:9-245:67" operationName="&lt;=">
+            <source xsi:type="_1:ThisSimExp" location="245:9-245:16"/>
+            <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="245:20-245:67" name="max">
+              <source xsi:type="_1:OperationCallExp" location="245:20-245:63" operationName="get">
+                <source xsi:type="_1:NavigationOrAttributeCallExp" location="245:20-245:49" name="mapRangeByLeft">
+                  <source xsi:type="_1:ThisEqualModelExp" location="245:20-245:34"/>
+                </source>
+                <arguments xsi:type="_1:ThisLeftExp" location="245:54-245:62"/>
+              </source>
+            </arguments>
+          </arguments>
+        </arguments>
+      </filter>
+    </inPattern>
+  </methods>
+  <methods xsi:type="ExternalMethod" location="15:1-15:72" name="Propagation">
+    <inMappingModel location="15:18-15:69" name="IN">
+      <leftModel location="15:34-15:50" name="m1">
+        <referenceModel location="15:37-15:50" name="Metametamodel"/>
+      </leftModel>
+      <rightModel location="15:52-15:68" name="m2">
+        <referenceModel location="15:55-15:68" name="Metametamodel"/>
+      </rightModel>
+    </inMappingModel>
+  </methods>
+  <methods xsi:type="SimEqual" location="86:1-107:2" name="SF">
+    <arguments xsi:type="_1:MappingModel" location="86:9-86:62" name="prop">
+      <leftModel location="86:27-86:43" name="m1">
+        <referenceModel location="86:30-86:43" name="Metametamodel"/>
+      </leftModel>
+      <rightModel location="86:45-86:61" name="m2">
+        <referenceModel location="86:48-86:61" name="Metametamodel"/>
+      </rightModel>
+    </arguments>
+    <inPattern location="87:2-86:66"/>
+    <sim location="91:2-105:8">
+      <value xsi:type="_1:IfExp" location="93:3-105:8">
+        <thenExpression xsi:type="_1:ThisSimExp" location="94:4-94:11"/>
+        <condition xsi:type="_1:OperationCallExp" location="93:6-93:32" operationName="oclIsUndefined">
+          <source xsi:type="_1:VariableExp" location="93:6-93:15" referredVariable="//@methods.7/@variables.0"/>
+        </condition>
+        <elseExpression xsi:type="_1:IfExp" location="96:4-104:9">
+          <thenExpression xsi:type="_1:ThisSimExp" location="97:6-97:13"/>
+          <condition xsi:type="_1:OperationCallExp" location="96:7-96:26" operationName="isEmpty">
+            <source xsi:type="_1:VariableExp" location="96:7-96:16" referredVariable="//@methods.7/@variables.0"/>
+          </condition>
+          <elseExpression xsi:type="_1:OperatorCallExp" location="99:8-103:14" operationName="+">
+            <source xsi:type="_1:ThisSimExp" location="99:8-99:15"/>
+            <arguments xsi:type="_1:CollectionOperationCallExp" location="101:6-103:14" operationName="sum">
+              <source xsi:type="_1:IteratorExp" location="101:6-102:97" name="collect">
+                <source xsi:type="_1:VariableExp" location="101:6-101:15" referredVariable="//@methods.7/@variables.0"/>
+                <body xsi:type="_1:OperatorCallExp" location="102:21-102:96" operationName="*">
+                  <source xsi:type="_1:NavigationOrAttributeCallExp" location="102:21-102:34" name="propagation">
+                    <source xsi:type="_1:VariableExp" location="102:21-102:22" referredVariable="//@methods.7/@sim/@value/@elseExpression/@elseExpression/@arguments.0/@source/@iterators.0"/>
+                  </source>
+                  <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="102:37-102:96" name="similarity">
+                    <source xsi:type="_1:CollectionOperationCallExp" location="102:37-102:85" operationName="first">
+                      <source xsi:type="_1:OperationCallExp" location="102:37-102:76" operationName="get">
+                        <source xsi:type="_1:NavigationOrAttributeCallExp" location="102:37-102:56" name="mapEqual">
+                          <source xsi:type="_1:ThisModuleExp" location="102:37-102:47"/>
+                        </source>
+                        <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="102:61-102:75" name="outgoingLink">
+                          <source xsi:type="_1:VariableExp" location="102:61-102:62" referredVariable="//@methods.7/@sim/@value/@elseExpression/@elseExpression/@arguments.0/@source/@iterators.0"/>
+                        </arguments>
+                      </source>
+                    </source>
+                  </arguments>
+                </body>
+                <iterators location="102:17-102:18" varName="e" variableExp="//@methods.7/@sim/@value/@elseExpression/@elseExpression/@arguments.0/@source/@body/@source/@source //@methods.7/@sim/@value/@elseExpression/@elseExpression/@arguments.0/@source/@body/@arguments.0/@source/@source/@arguments.0/@source"/>
+              </source>
+            </arguments>
+          </elseExpression>
+        </elseExpression>
+      </value>
+    </sim>
+    <variables location="88:3-88:81" varName="propEdges" variableExp="//@methods.7/@sim/@value/@condition/@source //@methods.7/@sim/@value/@elseExpression/@condition/@source //@methods.7/@sim/@value/@elseExpression/@elseExpression/@arguments.0/@source/@source">
+      <type xsi:type="_1:SequenceType" location="88:15-88:31">
+        <elementType xsi:type="_1:OclAnyType" location="88:24-88:30"/>
+      </type>
+      <initExpression xsi:type="_1:OperationCallExp" location="88:34-88:80" operationName="get">
+        <source xsi:type="_1:NavigationOrAttributeCallExp" location="88:34-88:52" name="propMap">
+          <source xsi:type="_1:ThisModuleExp" location="88:34-88:44"/>
+        </source>
+        <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="88:57-88:79" name="xmiIDs_Equal">
+          <source xsi:type="_1:ThisEqualExp" location="88:57-88:66"/>
+        </arguments>
+      </initExpression>
+    </variables>
+  </methods>
+  <methods xsi:type="SimEqual" location="219:1-222:2" name="Normalization">
+    <inPattern location="221:2-220:2"/>
+    <sim location="221:2-221:46">
+      <value xsi:type="_1:OperatorCallExp" location="221:5-221:46" operationName="/">
+        <source xsi:type="_1:ThisSimExp" location="221:5-221:12"/>
+        <arguments xsi:type="_1:NavigationOrAttributeCallExp" location="221:15-221:46" name="equalModelMaxSim">
+          <source xsi:type="_1:ThisEqualModelExp" location="221:15-221:29"/>
+        </arguments>
+      </value>
+    </sim>
+  </methods>
+  <methods xsi:type="AggrEqual" location="262:1-264:2" name="WeightedAverage">
+    <inPattern location="263:2-262:26"/>
+    <sim location="263:2-263:36">
+      <value xsi:type="SummationExp" location="263:5-263:36">
+        <sumExpression xsi:type="_1:OperatorCallExp" location="263:15-263:35" operationName="*">
+          <source xsi:type="_1:ThisSimExp" location="263:15-263:22"/>
+          <arguments xsi:type="_1:ThisWeightExp" location="263:25-263:35"/>
+        </sumExpression>
+      </value>
+    </sim>
+  </methods>
+  <methods xsi:type="SelEqual" location="254:1-260:2" name="BothMaxSim">
+    <inPattern location="257:2-259:72">
+      <filter xsi:type="_1:OperatorCallExp" location="257:7-259:72" operationName="and">
+        <source xsi:type="_1:OperationCallExp" location="257:7-257:73" operationName="includes">
+          <source xsi:type="_1:OperationCallExp" location="257:7-257:53" operationName="get">
+            <source xsi:type="_1:NavigationOrAttributeCallExp" location="257:7-257:39" name="equalMaxSimByLeft">
+              <source xsi:type="_1:ThisEqualModelExp" location="257:7-257:21"/>
+            </source>
+            <arguments xsi:type="_1:ThisLeftExp" location="257:44-257:52"/>
+          </source>
+          <arguments xsi:type="_1:ThisEqualExp" location="257:63-257:72"/>
+        </source>
+        <arguments xsi:type="_1:OperationCallExp" location="259:4-259:72" operationName="includes">
+          <source xsi:type="_1:OperationCallExp" location="259:4-259:52" operationName="get">
+            <source xsi:type="_1:NavigationOrAttributeCallExp" location="259:4-259:37" name="equalMaxSimByRight">
+              <source xsi:type="_1:ThisEqualModelExp" location="259:4-259:18"/>
+            </source>
+            <arguments xsi:type="_1:ThisRightExp" location="259:42-259:51"/>
+          </source>
+          <arguments xsi:type="_1:ThisEqualExp" location="259:62-259:71"/>
+        </arguments>
+      </filter>
+    </inPattern>
+  </methods>
+  <methods xsi:type="ExternalMethod" location="11:1-11:75" name="Differentiation">
+    <inMappingModel location="11:22-11:72" name="IN1">
+      <leftModel location="11:37-11:53" name="m1">
+        <referenceModel location="11:40-11:53" name="Metametamodel"/>
+      </leftModel>
+      <rightModel location="11:55-11:71" name="m2">
+        <referenceModel location="11:58-11:71" name="Metametamodel"/>
+      </rightModel>
+    </inMappingModel>
+  </methods>
+  <methods xsi:type="ExternalMethod" location="9:1-9:79" name="TypeDifferentiation">
+    <inMappingModel location="9:26-9:76" name="IN1">
+      <leftModel location="9:41-9:57" name="m1">
+        <referenceModel location="9:44-9:57" name="Metametamodel"/>
+      </leftModel>
+      <rightModel location="9:59-9:75" name="m2">
+        <referenceModel location="9:62-9:75" name="Metametamodel"/>
+      </rightModel>
+    </inMappingModel>
+  </methods>
+  <methods xsi:type="ExternalMethod" location="17:1-17:73" name="ConceptualLink">
+    <inMappingModel location="17:21-17:70" name="IN">
+      <leftModel location="17:35-17:51" name="m1">
+        <referenceModel location="17:38-17:51" name="Metametamodel"/>
+      </leftModel>
+      <rightModel location="17:53-17:69" name="m2">
+        <referenceModel location="17:56-17:69" name="Metametamodel"/>
+      </rightModel>
+    </inMappingModel>
+  </methods>
+  <methods xsi:type="ExternalMethod" location="7:1-7:68" name="Rewriting">
+    <inMappingModel location="7:16-7:65" name="IN">
+      <leftModel location="7:30-7:46" name="m1">
+        <referenceModel location="7:33-7:46" name="Metametamodel"/>
+      </leftModel>
+      <rightModel location="7:48-7:64" name="m2">
+        <referenceModel location="7:51-7:64" name="Metametamodel"/>
+      </rightModel>
+    </inMappingModel>
+  </methods>
+  <modelsBlock>
+    <models xsi:type="_1:MappingModel" name="map2">
+      <leftModel name="m1">
+        <referenceModel name="%EMF"/>
+      </leftModel>
+      <rightModel name="m2">
+        <referenceModel name="%EMF"/>
+      </rightModel>
+    </models>
+  </modelsBlock>
+  <modelsFlowsBlock>
+    <modelsFlows method="//@methods.0">
+      <outMappingModel name="tp"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsBlock/@models.0"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.1">
+      <outMappingModel name="typeRef"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsBlock/@models.0"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.2">
+      <outMappingModel name="typeAtt"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsBlock/@models.0"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.3">
+      <outMappingModel name="merged"/>
+      <inMappingModel xsi:type="WeightedModelExp" weight="1.0">
+        <modelFlowExp xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.0/@outMappingModel"/>
+      </inMappingModel>
+      <inMappingModel xsi:type="WeightedModelExp" weight="1.0">
+        <modelFlowExp xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.1/@outMappingModel"/>
+      </inMappingModel>
+      <inMappingModel xsi:type="WeightedModelExp" weight="1.0">
+        <modelFlowExp xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.2/@outMappingModel"/>
+      </inMappingModel>
+    </modelsFlows>
+    <modelsFlows method="//@methods.4">
+      <outMappingModel name="nam"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.3/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.5">
+      <outMappingModel name="filtered"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.4/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.6">
+      <outMappingModel name="prop"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.5/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.7">
+      <outMappingModel name="sf"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.5/@outMappingModel"/>
+      <arguments referredModel="//@modelsFlowsBlock/@modelsFlows.6/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.8">
+      <outMappingModel name="norm"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.7/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.9">
+      <outMappingModel name="tmpresult"/>
+      <inMappingModel xsi:type="WeightedModelExp" weight="0.5">
+        <modelFlowExp xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.8/@outMappingModel"/>
+      </inMappingModel>
+      <inMappingModel xsi:type="WeightedModelExp" weight="0.5">
+        <modelFlowExp xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.4/@outMappingModel"/>
+      </inMappingModel>
+    </modelsFlows>
+    <modelsFlows method="//@methods.10">
+      <outMappingModel name="result"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.4/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.11">
+      <outMappingModel name="diff"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.10/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.12">
+      <outMappingModel name="td"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.11/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.13">
+      <outMappingModel name="cl"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.12/@outMappingModel"/>
+    </modelsFlows>
+    <modelsFlows method="//@methods.14">
+      <outMappingModel name="rw"/>
+      <inMappingModel xsi:type="MappingModelRefExp" referredMappingModel="//@modelsFlowsBlock/@modelsFlows.13/@outMappingModel"/>
+    </modelsFlows>
+  </modelsFlowsBlock>
+  <referenceModels name="Trace"/>
+  <referenceModels name="%EMF"/>
+  <referenceModels name="%EMF"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="SpreadsheetMLSimplified"/>
+  <referenceModels name="ParameterMM"/>
+  <referenceModels name="ParameterMM"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="Metametamodel"/>
+  <referenceModels name="m1"/>
+  <referenceModels name="m2"/>
+  <referenceModels name="m1"/>
+  <referenceModels name="m2"/>
+</Matcher>

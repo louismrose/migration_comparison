@@ -1,0 +1,92 @@
+-- @atlcompiler atl2006
+module TypeClass0;
+create TypeClassEqual : EqualMM from map2 : EqualMM, m2 : Metametamodel, m1 : Metametamodel;
+
+uses EqualMM;
+
+uses Metametamodel;
+
+uses SuitableMetametamodel;
+
+rule CreateEqualTypeClass {
+ from
+  left : Metametamodel!EModelElement in m1,
+  right : Metametamodel!EModelElement in m2
+  (
+   left.isClass and right.isClass
+  )
+ to
+  eLeft : EqualMM!LeftElement (
+   element <- eLeftRef
+  ),
+  eLeftRef : EqualMM!ElementRef (
+   ref <- left.__xmiID__,
+   modelRef <- thisModule.equalModel('map2').leftM
+  ),
+  eRight : EqualMM!RightElement (
+   element <- eRightRef
+  ),
+  eRightRef : EqualMM!ElementRef (
+   ref <- right.__xmiID__,
+   modelRef <- thisModule.equalModel('map2').rightM
+  ),
+  e : EqualMM!Equal (
+   name <- left.leftName_rightName(right),
+   left <- eLeft,
+   right <- eRight,
+   similarity <- 0,
+   model <- thisModule.equalModel('map2')
+  )
+}
+
+rule matchModel {
+ from
+  mmw : EqualMM!MatchModel in map2
+ to
+  out : EqualMM!MatchModel (
+   name <- mmw.name,
+   leftM <- mmw.leftM,
+   rightM <- mmw.rightM
+  )
+}
+
+rule modelRef {
+ from
+  mmw : EqualMM!ModelRef in map2
+ to
+  out : EqualMM!ModelRef (
+   name <- mmw.name,
+   ref <- mmw.ref
+  )
+}
+
+rule leftElement {
+ from
+  mmw : EqualMM!LeftElement in map2
+ to
+  out : EqualMM!LeftElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+rule rightElement {
+ from
+  mmw : EqualMM!RightElement in map2
+ to
+  out : EqualMM!RightElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+rule ElementRef {
+ from
+  mmw : EqualMM!ElementRef in map2
+ to
+  out : EqualMM!ElementRef (
+   name <- mmw.name,
+   ref <- mmw.ref,
+   modelRef <- mmw.modelRef
+  )
+}

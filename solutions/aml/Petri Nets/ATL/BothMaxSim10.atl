@@ -1,0 +1,77 @@
+-- @atlcompiler atl2006
+module BothMaxSim10;
+create BothMaxSimEqual : EqualMM from tmpresult : EqualMM, m2 : Metametamodel, m1 : Metametamodel;
+
+uses EqualMM;
+
+uses Metametamodel;
+
+uses SuitableMetametamodel;
+
+rule SelEqualBothMaxSim {
+ from
+  tmpresultVar : EqualMM!Equal in tmpresult
+  (
+   tmpresultVar.model.equalMaxSimByLeft.get(tmpresultVar.leftE).includes(tmpresultVar) and tmpresultVar.model.equalMaxSimByRight.get(tmpresultVar.rightE).includes(tmpresultVar)
+  )
+ to
+  e : EqualMM!Equal (
+   name <- tmpresultVar.name,
+   left <- thisModule.leftElement(tmpresultVar.left),
+   right <- thisModule.rightElement(tmpresultVar.right),
+   similarity <- tmpresultVar.similarity,
+   model <- thisModule.equalModel('tmpresult')
+  )
+}
+
+rule matchModel {
+ from
+  mmw : EqualMM!MatchModel in tmpresult
+ to
+  out : EqualMM!MatchModel (
+   name <- mmw.name,
+   leftM <- mmw.leftM,
+   rightM <- mmw.rightM
+  )
+}
+
+rule modelRef {
+ from
+  mmw : EqualMM!ModelRef in tmpresult
+ to
+  out : EqualMM!ModelRef (
+   name <- mmw.name,
+   ref <- mmw.ref
+  )
+}
+
+lazy rule leftElement {
+ from
+  mmw : EqualMM!LeftElement in tmpresult
+ to
+  out : EqualMM!LeftElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+lazy rule rightElement {
+ from
+  mmw : EqualMM!RightElement in tmpresult
+ to
+  out : EqualMM!RightElement (
+   name <- mmw.name,
+   element <- mmw.element
+  )
+}
+
+rule ElementRef {
+ from
+  mmw : EqualMM!ElementRef in tmpresult
+ to
+  out : EqualMM!ElementRef (
+   name <- mmw.name,
+   ref <- mmw.ref,
+   modelRef <- mmw.modelRef
+  )
+}

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/migration-comparison/!svn/ver/15/resources/gmf_graph/models/mindmap
+END
+Before.model
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/migration-comparison/!svn/ver/15/resources/gmf_graph/models/mindmap/Before.model
+END
+After.gmfgraph
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/migration-comparison/!svn/ver/15/resources/gmf_graph/models/mindmap/After.gmfgraph
+END

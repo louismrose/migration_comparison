@@ -1,0 +1,85 @@
+-- @atlcompiler atl2006
+module WeightedAverage9;
+create WeightedAverageEqual : EqualMM from norm : EqualMM, nam : EqualMM, m2 : Metametamodel, m1 : Metametamodel;
+
+uses EqualMM;
+
+uses Metametamodel;
+
+uses SuitableMetametamodel;
+
+rule AggrEqualWeightedAverage {
+ from
+  normVar : EqualMM!Equal
+  (
+   thisModule.map.get(normVar.xmiIDs_Equal) = normVar
+  )
+ to
+  e : EqualMM!Equal (
+   name <- normVar.name,
+   left <- thisModule.leftElement(normVar.left),
+   right <- thisModule.rightElement(normVar.right),
+   similarity <- normVar.sum,
+   model <- thisModule.equalModel('norm')
+  )
+}
+
+rule matchModel {
+ from
+  mmw : EqualMM!MatchModel in norm
+ to
+  out : EqualMM!MatchModel (
+   name <- mmw.name,
+   leftM <- mmw.leftM,
+   rightM <- mmw.rightM
+  )
+}
+
+rule modelRef {
+ from
+  mmw : EqualMM!ModelRef in norm
+ to
+  out : EqualMM!ModelRef (
+   name <- mmw.name,
+   ref <- mmw.ref
+  )
+}
+
+lazy rule leftElement {
+ from
+  mmw : EqualMM!LeftElement
+ to
+  out : EqualMM!LeftElement (
+   name <- mmw.name,
+   element <- thisModule.ElementRef(mmw.element)
+  )
+}
+
+lazy rule rightElement {
+ from
+  mmw : EqualMM!RightElement
+ to
+  out : EqualMM!RightElement (
+   name <- mmw.name,
+   element <- thisModule.ElementRef(mmw.element)
+  )
+}
+
+lazy rule ElementRef {
+ from
+  mmw : EqualMM!ElementRef
+ to
+  out : EqualMM!ElementRef (
+   name <- mmw.name,
+   ref <- mmw.ref,
+   modelRef <- mmw.getModelRef('norm')
+  )
+}
+
+helper def: modelWeight() : Map(EqualMM!MatchModel, Real) =
+ Map {(thisModule.equalModel('norm'), 0.5), (thisModule.equalModel('nam'), 0.5)};
+
+helper context EqualMM!Equal def: sum : Real =
+ thisModule.mapEqual.get(self.xmiIDs_Equal)->iterate(e; acc : Real = 0 |
+  acc + e.similarity * thisModule.modelWeight().get(e.model)
+ );

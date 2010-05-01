@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/.project
+END
+Petri Nets.aml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/Petri%20Nets.aml
+END
+PetriNets.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/PetriNets.properties
+END
+PetriNets.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/PetriNets.xml
+END
+Petri Nets.aml.old.xmi
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/migration-comparison/!svn/ver/38/resources/aml/Petri%20Nets/Petri%20Nets.aml.old.xmi
+END

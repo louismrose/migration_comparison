@@ -1,0 +1,148 @@
+-- @atlcompiler atl2006
+module SetLinksFiltering;
+create OUT : EqualMM from IN1 : EqualMM, m1 : Metametamodel, m2 : Metametamodel;
+
+helper context EqualMM!EqualStructuralFeature def : existsInSupertypes : Boolean =
+	self.refImmediateComposite().equalSupertypes--.debug('equalS')
+	->union(
+		self.refImmediateComposite().equalRightSupertypes--.debug('rS')
+	)
+	->union(
+		self.refImmediateComposite().equalLeftSupertypes--.debug('lS')
+	)
+								->collect(e | e.child)
+								->flatten()
+								->select(e | if e.oclType() = self.oclType() then
+												e.equal(self) 
+											 else
+											 	false
+											 endif)
+								->notEmpty();
+
+
+helper context EqualMM!EqualClass def : filteredChildren : Sequence (OclAny) =
+	self.child
+							->reject(e | e.oclIsTypeOf(EqualMM!DisjointSet) or e.existsInSupertypes);
+
+rule EqualClass  {
+	from
+		s : EqualMM!EqualClass (
+--			if s.name = 'EnumColumn_Attribute' then
+				s.filteredChildren.notEmpty()
+--			else
+--				false
+--			endif
+		)	
+	to 
+		t : EqualMM!EqualClass (			
+			child <- s.filteredChildren->collect(e | thisModule.EqualStructuralFeature(e)),
+			model <- s.model,
+			name <- s.name,
+			left <- thisModule.leftElement(s.left),
+			right <- thisModule.rightElement(s.right),
+			similarity <- 0
+		)			
+}
+
+lazy abstract rule EqualStructuralFeature {
+	from
+		s : EqualMM!EqualStructuralFeature
+	to 
+		t : EqualMM!EqualStructuralFeature (
+			name <- s.name,
+			left <- thisModule.leftElement(s.left),
+			right <- thisModule.rightElement(s.right),
+			similarity <- 1.0
+		)
+	
+}
+
+lazy rule Overlapping extends EqualStructuralFeature {
+	from 
+		s : EqualMM!OverlappingSet
+	to
+		t : EqualMM!OverlappingSet
+}
+
+lazy rule EqualSet extends EqualStructuralFeature {
+	from
+		s : EqualMM!EqualSet
+	to
+		t : EqualMM!EqualSet
+}
+
+lazy rule SubSet extends EqualStructuralFeature {
+	from
+		s : EqualMM!SubSet
+	to
+		t : EqualMM!SubSet
+}
+
+lazy rule SuperSet extends EqualStructuralFeature {
+	from
+		s : EqualMM!SuperSet
+	to
+		t : EqualMM!SuperSet
+}
+
+lazy rule DisjointSet extends EqualStructuralFeature {
+	from 
+		s : EqualMM!DisjointSet
+	to
+		t : EqualMM!DisjointSet
+	
+}
+
+-- copy & paste rules
+
+lazy rule leftElement {
+	from
+		mmw : EqualMM!LeftElement
+	to
+		out : EqualMM!LeftElement (
+			name <- mmw.name,
+			element <- mmw.element
+		)
+}
+
+lazy rule rightElement {
+	from
+		mmw : EqualMM!RightElement
+	to
+		out : EqualMM!RightElement (
+			name <- mmw.name,
+			element <- mmw.element
+		)
+}
+
+rule ElementRefs {
+	from
+		mmw : EqualMM!ElementRef 		
+	to
+		out : EqualMM!ElementRef (
+			name <- mmw.name,
+			ref <- mmw.ref,
+			modelRef <- mmw.modelRef			
+		)
+}
+
+rule matchmodel {
+	from
+		mmw: EqualMM!MatchModel 
+	to
+		model : EqualMM!MatchModel (
+			name <- mmw.name,
+			leftM <- mmw.leftM,
+			rightM <- mmw.rightM
+		)
+}
+
+rule modelref {
+	from
+		mmw : EqualMM!ModelRef
+	to
+		out : EqualMM!ModelRef (
+			name <- mmw.name,
+			ref <- mmw.ref
+		)
+}

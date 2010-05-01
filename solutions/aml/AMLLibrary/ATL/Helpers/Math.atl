@@ -1,0 +1,6 @@
+--@atlcompiler atl2006
+library Math;
+
+helper context Real def : pow (exponent : Real) : Real =
+	(exponent * self.log()).exp();
+

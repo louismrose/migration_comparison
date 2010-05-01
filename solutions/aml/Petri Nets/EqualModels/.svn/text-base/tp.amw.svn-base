@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MatchModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="mmw_match" name="m12m2">
+  <ownedElement xsi:type="Equal" name="Net_Net" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.0"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.0"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Net_Place" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.1"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.1"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Net_Transition" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.2"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.2"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Net_Arc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.3"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.3"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Net_PTArc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.4"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.4"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Net_TPArc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.5"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.5"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Place_Net" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.6"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.6"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Place_Place" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.7"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.7"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Place_Transition" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.8"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.8"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Place_Arc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.9"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.9"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Place_PTArc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.10"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.10"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Place_TPArc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.11"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.11"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Transition_Net" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.12"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.12"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Transition_Place" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.13"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.13"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Transition_Transition" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.14"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.14"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Transition_Arc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.15"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.15"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Transition_PTArc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.16"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.16"/>
+  </ownedElement>
+  <ownedElement xsi:type="Equal" name="Transition_TPArc" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.17"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.17"/>
+  </ownedElement>
+  <leftM xsi:type="ModelRef" name="m1" ref="Models/Before.ecore">
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+  </leftM>
+  <rightM xsi:type="ModelRef" name="m2" ref="Models/After.ecore">
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc"/>
+  </rightM>
+</MatchModel>

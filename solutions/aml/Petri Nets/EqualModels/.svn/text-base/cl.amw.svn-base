@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MatchModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="mmw_match" xmlns:_1="mmw_conceptual_evolution" xmlns:_2="mmw_diff" name="m12m2">
+  <ownedElement xsi:type="_1:IntroduceRestrictedProperty" name="net" description="Introduced the reference net requiring default value, mutiplicity 1" userAssistance="It is needed to provide default values to this reference">
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.60"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwned" name="src_arcs" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.15"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.19"/>
+    <associatedReference xsi:type="RightElement" name="net" element="//@rightM/@ownedElementRef.0"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwned" name="dst_arcs" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.24"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.28"/>
+    <associatedReference xsi:type="RightElement" name="net" element="//@rightM/@ownedElementRef.1"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwned" name="src_arcs" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.33"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.37"/>
+    <associatedReference xsi:type="RightElement" name="net" element="//@rightM/@ownedElementRef.2"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwned" name="dst_arcs" similarity="0.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.42"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.46"/>
+    <associatedReference xsi:type="RightElement" name="net" element="//@rightM/@ownedElementRef.3"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwner" name="src_in" similarity="0.0" userAssistance="It is necessary to check out the overlapping among these properties">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.18"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.22"/>
+    <associatedReference xsi:type="LeftElement" name="src" element="//@leftM/@ownedElementRef.0"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwner" name="src_out" similarity="0.0" userAssistance="It is necessary to check out the overlapping among these properties">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.19"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.23"/>
+    <associatedReference xsi:type="LeftElement" name="src" element="//@leftM/@ownedElementRef.1"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwner" name="dst_in" similarity="0.0" userAssistance="It is necessary to check out the overlapping among these properties">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.27"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.31"/>
+    <associatedReference xsi:type="LeftElement" name="dst" element="//@leftM/@ownedElementRef.2"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwner" name="dst_out" similarity="0.0" userAssistance="It is necessary to check out the overlapping among these properties">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.28"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.32"/>
+    <associatedReference xsi:type="LeftElement" name="dst" element="//@leftM/@ownedElementRef.3"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwner" name="src_in" similarity="0.0" userAssistance="It is necessary to check out the overlapping among these properties">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.34"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.38"/>
+    <associatedReference xsi:type="LeftElement" name="src" element="//@leftM/@ownedElementRef.4"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwner" name="src_out" similarity="0.0" userAssistance="It is necessary to check out the overlapping among these properties">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.35"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.39"/>
+    <associatedReference xsi:type="LeftElement" name="src" element="//@leftM/@ownedElementRef.5"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwner" name="dst_in" similarity="0.0" userAssistance="It is necessary to check out the overlapping among these properties">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.43"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.47"/>
+    <associatedReference xsi:type="LeftElement" name="dst" element="//@leftM/@ownedElementRef.6"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:MovePropertyToOwner" name="dst_out" similarity="0.0" userAssistance="It is necessary to check out the overlapping among these properties">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.44"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.48"/>
+    <associatedReference xsi:type="LeftElement" name="dst" element="//@leftM/@ownedElementRef.7"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:ExtractClass" name="src_d" similarity="0.0" userAssistance="">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.21"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.25"/>
+    <associatedReference name="out" element="//@rightM/@ownedElementRef.4"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:ExtractClass" name="src_s" similarity="0.0" userAssistance="">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.22"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.26"/>
+    <associatedReference name="in" element="//@rightM/@ownedElementRef.5"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:ExtractClass" name="dst_d" similarity="0.0" userAssistance="">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.30"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.34"/>
+    <associatedReference name="out" element="//@rightM/@ownedElementRef.6"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:ExtractClass" name="dst_s" similarity="0.0" userAssistance="">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.31"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.35"/>
+    <associatedReference name="in" element="//@rightM/@ownedElementRef.7"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:ExtractClass" name="src_s" similarity="0.0" userAssistance="">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.38"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.42"/>
+    <associatedReference name="in" element="//@rightM/@ownedElementRef.8"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:ExtractClass" name="src_d" similarity="0.0" userAssistance="">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.41"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.45"/>
+    <associatedReference name="out" element="//@rightM/@ownedElementRef.9"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:ExtractClass" name="dst_s" similarity="0.0" userAssistance="">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.47"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.51"/>
+    <associatedReference name="in" element="//@rightM/@ownedElementRef.10"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:ExtractClass" name="dst_d" similarity="0.0" userAssistance="">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.50"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.54"/>
+    <associatedReference name="out" element="//@rightM/@ownedElementRef.11"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictMultiplicityReference" name="src_s" description="Restricted lower or upper of reference" similarity="0.0" userAssistance="Restricting lower requires new values Restricting upper requires the selection of certain values">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.20"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.24"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictMultiplicityReference" name="src_d" description="Restricted lower or upper of reference" similarity="0.0" userAssistance="Restricting lower requires new values Restricting upper requires the selection of certain values">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.23"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.27"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictMultiplicityReference" name="dst_s" description="Restricted lower or upper of reference" similarity="0.0" userAssistance="Restricting lower requires new values Restricting upper requires the selection of certain values">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.29"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.33"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictMultiplicityReference" name="dst_d" description="Restricted lower or upper of reference" similarity="0.0" userAssistance="Restricting lower requires new values Restricting upper requires the selection of certain values">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.32"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.36"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictMultiplicityReference" name="src_d" description="Restricted lower or upper of reference" similarity="0.0" userAssistance="Restricting lower requires new values Restricting upper requires the selection of certain values">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.39"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.43"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictMultiplicityReference" name="src_s" description="Restricted lower or upper of reference" similarity="0.0" userAssistance="Restricting lower requires new values Restricting upper requires the selection of certain values">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.40"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.44"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictMultiplicityReference" name="dst_d" description="Restricted lower or upper of reference" similarity="0.0" userAssistance="Restricting lower requires new values Restricting upper requires the selection of certain values">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.48"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.52"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictMultiplicityReference" name="dst_s" description="Restricted lower or upper of reference" similarity="0.0" userAssistance="Restricting lower requires new values Restricting upper requires the selection of certain values">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.49"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.53"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictTypeReference" name="src_in" description="Restricted type of reference. It may concern the supertypes of the reference type" similarity="0.0" userAssistance="It is necessary to figure out the overlapping among types, and to develop the corresponding adaptation code">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.16"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.20"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictTypeReference" name="src_out" description="Restricted type of reference. It may concern the supertypes of the reference type" similarity="0.0" userAssistance="It is necessary to figure out the overlapping among types, and to develop the corresponding adaptation code">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.17"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.21"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictTypeReference" name="dst_in" description="Restricted type of reference. It may concern the supertypes of the reference type" similarity="0.0" userAssistance="It is necessary to figure out the overlapping among types, and to develop the corresponding adaptation code">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.25"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.29"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictTypeReference" name="dst_out" description="Restricted type of reference. It may concern the supertypes of the reference type" similarity="0.0" userAssistance="It is necessary to figure out the overlapping among types, and to develop the corresponding adaptation code">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.26"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.30"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictTypeReference" name="src_in" description="Restricted type of reference. It may concern the supertypes of the reference type" similarity="0.0" userAssistance="It is necessary to figure out the overlapping among types, and to develop the corresponding adaptation code">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.36"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.40"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictTypeReference" name="src_out" description="Restricted type of reference. It may concern the supertypes of the reference type" similarity="0.0" userAssistance="It is necessary to figure out the overlapping among types, and to develop the corresponding adaptation code">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.37"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.41"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictTypeReference" name="dst_in" description="Restricted type of reference. It may concern the supertypes of the reference type" similarity="0.0" userAssistance="It is necessary to figure out the overlapping among types, and to develop the corresponding adaptation code">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.45"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.49"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:RestrictTypeReference" name="dst_out" description="Restricted type of reference. It may concern the supertypes of the reference type" similarity="0.0" userAssistance="It is necessary to figure out the overlapping among types, and to develop the corresponding adaptation code">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.46"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.50"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualClass" name="Net_Net" similarity="1.0">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.8"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.12"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:AddedReferenceAssociation">
+    <associationEnd xsi:type="AssociationEnd" name="src_arcs" relatedLink="//@ownedElement.1"/>
+    <associationEnd xsi:type="AssociationEnd" name="dst_arcs" relatedLink="//@ownedElement.2"/>
+    <associationEnd xsi:type="AssociationEnd" name="src_arcs" relatedLink="//@ownedElement.3"/>
+    <associationEnd xsi:type="AssociationEnd" name="dst_arcs" relatedLink="//@ownedElement.4"/>
+    <associationEnd xsi:type="AssociationEnd" name="Net_Net" relatedLink="//@ownedElement.37"/>
+  </ownedElement>
+  <ownedElement xsi:type="_2:AddedClass" name="PTArc">
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.58"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:AddedReferenceAssociation">
+    <associationEnd xsi:type="AssociationEnd" name="src_d" relatedLink="//@ownedElement.13"/>
+    <associationEnd xsi:type="AssociationEnd" name="dst_d" relatedLink="//@ownedElement.15"/>
+    <associationEnd xsi:type="AssociationEnd" name="src_s" relatedLink="//@ownedElement.17"/>
+    <associationEnd xsi:type="AssociationEnd" name="dst_s" relatedLink="//@ownedElement.19"/>
+    <associationEnd xsi:type="AssociationEnd" name="PTArc" relatedLink="//@ownedElement.39"/>
+  </ownedElement>
+  <ownedElement xsi:type="_2:AddedClass" name="TPArc">
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.59"/>
+  </ownedElement>
+  <ownedElement xsi:type="_1:AddedReferenceAssociation">
+    <associationEnd xsi:type="AssociationEnd" name="src_s" relatedLink="//@ownedElement.14"/>
+    <associationEnd xsi:type="AssociationEnd" name="dst_s" relatedLink="//@ownedElement.16"/>
+    <associationEnd xsi:type="AssociationEnd" name="src_d" relatedLink="//@ownedElement.18"/>
+    <associationEnd xsi:type="AssociationEnd" name="dst_d" relatedLink="//@ownedElement.20"/>
+    <associationEnd xsi:type="AssociationEnd" name="TPArc" relatedLink="//@ownedElement.41"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualClass" name="Place_Place" similarity="0.875">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.9"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.13"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualClass" name="Transition_Transition" similarity="0.875">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.10"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.14"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualAttribute" name="name_name" similarity="0.6176470588235294">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.51"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.55"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualAttribute" name="name_name" similarity="0.6176470588235294">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.52"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.56"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualReference" name="places_places" similarity="0.6102941176470589">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.11"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.15"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualReference" name="transitions_transitions" similarity="0.6102941176470589">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.12"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.16"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualReference" name="net_net" similarity="0.6176470588235294">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.13"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.17"/>
+  </ownedElement>
+  <ownedElement xsi:type="EqualReference" name="net_net" similarity="0.6176470588235294">
+    <left xsi:type="LeftElement" element="//@leftM/@ownedElementRef.14"/>
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.18"/>
+  </ownedElement>
+  <ownedElement xsi:type="_2:AddedClass" name="Arc">
+    <right xsi:type="RightElement" element="//@rightM/@ownedElementRef.57"/>
+  </ownedElement>
+  <leftM xsi:type="ModelRef" name="m1" ref="Models/Before.ecore">
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/src"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/dst"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+  </leftM>
+  <rightM xsi:type="ModelRef" name="m2" ref="Models/After.ecore">
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/places"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/transitions"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/net"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Net/arcs"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/in"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/out"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/s"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc/d"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Place/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Transition/name"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//PTArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//TPArc"/>
+    <ownedElementRef xsi:type="ElementRef" ref="//Arc/net"/>
+  </rightM>
+  <methods name="Conceptual Link"/>
+</MatchModel>

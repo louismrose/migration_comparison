@@ -1,0 +1,124 @@
+-- @atlcompiler atl2006
+module m12m2;
+create OUT : rightlit_petriNets from IN : leftlit_petriNets;
+
+rule Net_Net {
+ from
+  s : leftlit_petriNets!Net
+  (
+   s.oclIsTypeOf(leftlit_petriNets!Net)
+  )
+ to
+  t : rightlit_petriNets!Net (
+   places <- s.places,
+   transitions <- s.transitions
+  )
+}
+
+rule Place_Place {
+ from
+  s : leftlit_petriNets!Place
+  (
+   s.oclIsTypeOf(leftlit_petriNets!Place)
+  )
+ to
+  t : rightlit_petriNets!Place (
+   net <- s.net,
+   name <- s.name,
+   in <- s.src->collect(e |
+    e.src
+   ),
+   out <- s.src->collect(e |
+    e.src
+   ),
+   in <- s.dst->collect(e |
+    e.dst
+   ),
+   out <- s.dst->collect(e |
+    e.dst
+   ),
+   net <- s.src->collect(e |
+    thisModule.Net(e, s)
+   ),
+   net <- s.dst->collect(e |
+    thisModule.Net(e, s)
+   ),
+   out <- thisModule.TPArc(s, s.dst, s.src, s.src, s.dst)
+  )
+}
+
+rule Transition_Transition {
+ from
+  s : leftlit_petriNets!Transition
+  (
+   s.oclIsTypeOf(leftlit_petriNets!Transition)
+  )
+ to
+  t : rightlit_petriNets!Transition (
+   net <- s.net,
+   name <- s.name,
+   in <- s.src->collect(e |
+    e.src
+   ),
+   out <- s.src->collect(e |
+    e.src
+   ),
+   in <- s.dst->collect(e |
+    e.dst
+   ),
+   out <- s.dst->collect(e |
+    e.dst
+   ),
+   net <- s.src->collect(e |
+    thisModule.Net(s, e)
+   ),
+   net <- s.dst->collect(e |
+    thisModule.Net(s, e)
+   ),
+   out <- thisModule.TPArc(s, s.dst, s.src, s.src, s.dst)
+  )
+}
+
+unique lazy rule Net {
+ from
+  src_arcsTransition : leftlit_petriNets!Transition,
+  src_arcsPlace : leftlit_petriNets!Place,
+  dst_arcsPlace : leftlit_petriNets!Place
+ to
+  t : rightlit_petriNets!Net (
+   arcs <- src_arcsPlace,
+   arcs <- dst_arcsPlace
+  )
+}
+
+unique lazy rule PTArc {
+ from
+  src_dPlace : leftlit_petriNets!Place,
+  src_dTransition : leftlit_petriNets!Transition,
+  src_sPlace : leftlit_petriNets!Place,
+  dst_sPlace : leftlit_petriNets!Place,
+  dst_dTransition : leftlit_petriNets!Transition
+ to
+  t : rightlit_petriNets!PTArc (
+   d <- src_dTransition,
+   s <- src_sPlace,
+   s <- dst_sPlace,
+   d <- dst_dTransition
+  )
+}
+
+unique lazy rule TPArc {
+ from
+  dst_dTransition : leftlit_petriNets!Transition,
+  dst_dPlace : leftlit_petriNets!Place,
+  src_dPlace : leftlit_petriNets!Place,
+  src_sTransition : leftlit_petriNets!Transition,
+  dst_sTransition : leftlit_petriNets!Transition
+ to
+  t : rightlit_petriNets!TPArc (
+   d <- dst_dPlace,
+   d <- src_dPlace,
+   s <- src_sTransition,
+   s <- dst_sTransition
+  )
+}

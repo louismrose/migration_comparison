@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary
+END
+AMLBasis.aml.xmi
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/AMLBasis.aml.xmi
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/.classpath
+END
+LevenshteinStatisticsPropertiesThreshold.aml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/LevenshteinStatisticsPropertiesThreshold.aml
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/.project
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/build.properties
+END
+NewLevenshteinStatisticsPropertiesThreshold.aml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/NewLevenshteinStatisticsPropertiesThreshold.aml
+END
+LevenshteinStatisticsPropertiesThreshold.aml.xmi
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/migration-comparison/!svn/ver/38/resources/aml/AMLLibrary/LevenshteinStatisticsPropertiesThreshold.aml.xmi
+END

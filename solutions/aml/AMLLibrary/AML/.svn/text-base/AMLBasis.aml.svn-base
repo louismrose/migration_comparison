@@ -1,0 +1,273 @@
+strategy AMLBasis {
+
+uses CreationAddedDeleted[IN:EqualModel(m1:Metametamodel, m2:Metametamodel)]()
+
+uses CreationByFullNameAndType[IN:EqualModel(m1:Metametamodel, m2:Metametamodel)]()
+
+uses Rewriting[IN:EqualModel(m1:Metametamodel, m2:Metametamodel)]()
+
+uses TypeDifferentiation[IN1:EqualModel(m1:Metametamodel, m2:Metametamodel)]()
+
+uses Differentiation[IN1:EqualModel(m1:Metametamodel, m2:Metametamodel)]()
+
+uses FlattenFeatures[IN : EqualModel(m1:Metametamodel, m2:Metametamodel)]()
+
+uses Propagation[IN : EqualModel(m1:Metametamodel, m2:Metametamodel)]()
+
+uses ConceptualLink[IN:EqualModel(m1:Metametamodel, m2:Metametamodel)]()
+
+
+create TypeClass () {	
+	when
+		 thisLeft.isClass and
+		 thisRight.isClass 
+} 
+
+create TypeStrF () {
+	when 
+		 	thisLeft.isStrFeature and
+		 	thisRight.isStrFeature
+}
+
+create TypeAttribute () {
+	when 
+		 	thisLeft.isAttribute and
+		 	thisRight.isAttribute
+}
+
+create TypeReference () {
+	when 
+		 	thisLeft.isReference and
+		 	thisRight.isReference
+}
+
+create TypeEnumeration () {
+	when 
+		 	thisLeft.isEnumeration and
+		 	thisRight.isEnumeration
+}
+
+create TypeEnumLiteral () {
+	when 
+		 	thisLeft.isEnumLiteral and
+		 	thisRight.isEnumLiteral
+}
+
+sim MSR (MSRExcel : SpreadsheetMLSimplified, paramM : ParameterMM) 
+ATLLibraries {(name = 'SpreadsheetMSR', path='../AMLLibrary/ATL/Helpers/SpreadsheetMSR')}
+JavaLibraries {
+	(name = 'match.MSRSimilarity', path='')
+}
+{
+	
+	is thisModule.mapExcelResult.get(thisLeft.name.leftProperTerm.buildTerm(thisRight.name.rightProperTerm))				
+}
+
+sim WordNet (paramM : ParameterMM) 
+ATLLibraries {(name ='ProperTerm', path='../AMLLibrary/ATL/Helpers/')}
+JavaLibraries {(name = 'match.JWISimilarity,match.ProperTermSimilarity', path='../AMLLibrary/Jars/jwi.jar')}
+{
+	is if thisLeft.name = thisRight.name then
+		1.0
+	   else
+	   	''.jwiSimilarity(thisLeft.name.properTerm, thisRight.name.properTerm)
+	   endif 	
+}
+
+sim Name ()
+{
+	is if thisLeft.name = thisRight.name then
+		1.0
+	   else
+			0	
+		endif		
+}
+
+sim SF (prop : EqualModel(m1:Metametamodel, m2:Metametamodel))  {
+	using {
+		propEdges : Sequence(OclAny) = thisModule.propMap.get(thisEqual.xmiIDs_Equal); 
+	}
+
+	is 
+
+		if propEdges.oclIsUndefined() then
+			thisSim
+		else
+			if propEdges.isEmpty() then
+					thisSim
+			else
+				   thisSim
+					+				 
+					propEdges
+						->collect(e | e.propagation * thisModule.mapEqual.get(e.outgoingLink)->first().similarity)
+						->sum()
+			endif							
+		endif
+
+}
+
+sim Levenshtein () 
+ATLLibraries{
+	(name='Strings', path='../AMLLibrary/ATL/Helpers')
+}
+JavaLibraries{
+	(name='match.SimmetricsSimilarity', path='../AMLLibrary/Jars/simmetrics.jar')
+}
+{
+	is thisLeft.name.simStrings(thisRight.name)
+}
+
+
+-- Corresponds to Content of Doan01
+sim AttributeValues (left : m1,right : m2)
+ATLLibraries{
+	(name='Strings', path='../AMLLibrary/ATL/Helpers')
+}
+JavaLibraries{
+	(name='match.SimmetricsSimilarity', path='../AMLLibrary/Jars/simmetrics.jar')
+}
+ {
+	  is
+	  if thisLeft.isAttribute and thisRight.isAttribute then
+		  if thisEqual.model.isEqualTo(thisLeft.type, thisRight.type) then
+		  		-- aggregation of similarity of instances		   
+			   	thisLeft.owner.allInstancesFrom('left')->iterate(instClass1; acc1 : Real = 0.0 |
+					acc1 + thisRight.owner.allInstancesFrom('right')->iterate( instClass2; acc2 : Real = 0.0 |
+								if instClass1.refGetValue(thisLeft.name).oclIsUndefined() or
+								   instClass2.refGetValue(thisRight.name).oclIsUndefined() then
+								   0
+								else 
+								 if instClass1.refGetValue(thisLeft.name).toString() = instClass2.refGetValue(thisRight.name).toString() then
+								 	1
+								 else
+								 	0
+								 endif
+								endif 	
+						)
+				)
+			else
+				0
+			endif
+	else
+		0
+	endif
+}
+
+
+
+sim TypeElement () {
+	is if thisEqual.model.isEqualTo(thisLeft.type, thisRight.type) then
+		1
+	else
+		0
+	endif
+}
+
+-- corresponds to Statistics of Do05
+-- intended to be applied to classes
+sim Statistics ()
+ATLLibraries {
+	(name = 'Vectors', path = '../AMLLibrary/ATL/Helpers'),
+	(name = 'Math', path = '../AMLLibrary/ATL/Helpers')
+} 
+{
+	is
+		thisModule.distance(
+		
+			Sequence{thisLeft.ParentsStatistic, 
+				thisLeft.ChildrenStatistic,
+				thisLeft.SiblingsStatistic},
+				
+			Sequence{thisRight.ParentsStatistic, 
+				thisRight.ChildrenStatistic,
+				thisRight.SiblingsStatistic}	
+		)
+}
+
+--http://lyle.smu.edu/~tspell/jaws/index.html
+--sim WordNet () {}
+
+sim Multiplicity () 
+{
+	is thisModule.multTable.get(
+		Tuple {
+			left = Tuple {lower = thisLeft.lower, upper = thisLeft.upper},
+			right = Tuple {lower = thisRight.lower, upper= thisRight.upper}
+		}
+	)			
+}
+
+
+
+
+
+
+
+sim ClassMappingByData (mapModel : WeavingModel(Trace)(leftModel : m1,rightModel : m2))
+{
+    using {
+        mappingsModel : Trace!Link = Trace!Link.allInstancesFrom('mapModel');
+    }
+    is if thisInstances(mappingsModel)->notEmpty() then 
+    	1
+		else
+		 0
+		endif
+}
+
+
+sim Normalization ()
+{
+	is thisSim / thisEqualModel.equalModelMaxSim
+}
+
+sim NormalizationStatistics ()
+{
+	is if thisSim = 1.0 then
+		0
+		else
+			1 -	thisSim / thisModule.equalModelMaxSim
+		endif
+}
+
+sel Threshold () {
+	when thisSim > 0.5
+}
+
+-- Delta 0.001, 0.002, 0.004, 0.006, 0.008, and 0.01 
+-- Do (page 114) indicates the best delta is 0.008 and the best threshold is 0.5
+sel ThresholdMaxDelta ()
+	 
+{
+	when thisSim > 0.5 
+		 and
+		 (thisSim >= thisEqualModel.mapRangeByLeft.get(thisLeft).maxD 
+		 	and thisSim <= thisEqualModel.mapRangeByLeft.get(thisLeft).max)
+}
+
+sel ThresholdBySample()
+	 
+{
+	when thisSim = 1 
+}
+
+sel BothMaxSim () 
+	
+{
+	when thisEqualModel.equalMaxSimByLeft.get(thisLeft).includes(thisEqual) 
+		 and
+		 thisEqualModel.equalMaxSimByRight.get(thisRight).includes(thisEqual)	
+}
+
+aggr WeightedAverage () {
+	is Summation(thisSim * thisWeight)
+}
+
+aggr Merge () {
+	is thisSim
+}
+
+models{}
+
+modelsFlow {}
+}

@@ -1,0 +1,8 @@
+#Properties
+#Tue Mar 30 10:28:49 BST 2010
+EqualModels=EqualModels
+m2=Models/After.ecore
+m1=Models/Before.ecore
+map2=map2.amw
+rw=rw.amw
+td=td.amw

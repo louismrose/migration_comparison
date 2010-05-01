@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/migration-comparison/!svn/ver/43/resources/petri_nets
+END
+After.model
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/migration-comparison/!svn/ver/13/resources/petri_nets/After.model
+END
+Before.model
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/migration-comparison/!svn/ver/13/resources/petri_nets/Before.model
+END
+After.emf
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/migration-comparison/!svn/ver/3/resources/petri_nets/After.emf
+END
+petrinet10.xmi
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/migration-comparison/!svn/ver/43/resources/petri_nets/petrinet10.xmi
+END
+petrinet100.xmi
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/migration-comparison/!svn/ver/43/resources/petri_nets/petrinet100.xmi
+END
+petrinet1000.xmi
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/migration-comparison/!svn/ver/43/resources/petri_nets/petrinet1000.xmi
+END
+petrinet10000.xmi
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/migration-comparison/!svn/ver/43/resources/petri_nets/petrinet10000.xmi
+END
+Before.emf
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/migration-comparison/!svn/ver/3/resources/petri_nets/Before.emf
+END
+petrinet5000.xmi
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/migration-comparison/!svn/ver/43/resources/petri_nets/petrinet5000.xmi
+END
+After.ecore
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/migration-comparison/!svn/ver/3/resources/petri_nets/After.ecore
+END
+Before.ecore
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/migration-comparison/!svn/ver/12/resources/petri_nets/Before.ecore
+END

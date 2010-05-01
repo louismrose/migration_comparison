@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets
+END
+Lit_petriNetsFactory.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/Lit_petriNetsFactory.class
+END
+Lit_petriNetsPackage.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/Lit_petriNetsPackage.class
+END
+Place.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/Place.class
+END
+Arc.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/Arc.class
+END
+Lit_petriNetsPackage$Literals.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/Lit_petriNetsPackage$Literals.class
+END
+Net.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/Net.class
+END
+PTArc.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/PTArc.class
+END
+TPArc.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/TPArc.class
+END
+Transition.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/migration-comparison/!svn/ver/101/resources/ecore2ecore/PetriNets/bin/lit_petriNets/Transition.class
+END
