@@ -1,0 +1,1 @@
+deleteFeature(gmfgraph.CustomClass.bundleName)

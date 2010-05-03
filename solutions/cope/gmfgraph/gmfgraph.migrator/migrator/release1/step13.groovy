@@ -1,0 +1,1 @@
+pushFeature(gmfgraph.AbstractFigure.children)

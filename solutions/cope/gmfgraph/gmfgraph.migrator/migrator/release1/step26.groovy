@@ -1,0 +1,1 @@
+deleteFeature(gmfgraph.Figure.parent)

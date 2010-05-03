@@ -1,0 +1,1 @@
+makeContainment(gmfgraph.FigureAccessor.typedFigure)

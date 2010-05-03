@@ -1,0 +1,17 @@
+eStringToStringMapEntry = gmfgraph.Figure.eAnnotations[0].details[0]
+eStringToStringMapEntry.value = "Anything you could combine visual representation from. Ordinary GEF figures, custom-defined or references to defined elsewhere. org.eclipse.draw2d.Figure"
+customChildrenReference = gmfgraph.CustomFigure.customChildren
+eAnnotation = customChildrenReference.newEAnnotation()
+eAnnotation.source = "http://www.eclipse.org/emf/2002/GenModel"
+eStringToStringMapEntry2 = eAnnotation.newEStringToStringMapEntry()
+eStringToStringMapEntry2.key = "documentation"
+eStringToStringMapEntry2.value = "Childrent enumerated with this feature are mere 'access points' to actual structure of the CustomFigure. They are not created, unlike those contained in regular Figure#children"
+diagramLabelClass = gmfgraph.DiagramLabel
+externalAttribute = diagramLabelClass.newEAttribute()
+externalAttribute.name = "external"
+externalAttribute.changeable = false
+externalAttribute.'volatile' = true
+externalAttribute.'transient' = true
+externalAttribute.derived = true
+eBooleanDataType = emf.EBoolean
+externalAttribute.eType = eBooleanDataType
